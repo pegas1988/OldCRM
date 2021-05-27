@@ -9,6 +9,17 @@ public class Client {
     private String sex;
     private String diagnoses;
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", sex='" + sex + '\'' +
+                ", diagnoses='" + diagnoses + '\'' +
+                '}';
+    }
+
     public String getDiagnoses() {
         return diagnoses;
     }

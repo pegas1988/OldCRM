@@ -7,7 +7,7 @@ public class Order {
     private Product product[];
     private int totalPrice;
     private Date dateToBeDone;
-    private ClientsOrderStages stage;
+    private String stage;
     private Client client;
     private String comments;
 
@@ -51,11 +51,11 @@ public class Order {
         this.dateToBeDone = dateToBeDone;
     }
 
-    public ClientsOrderStages getStage() {
+    public String getStage() {
         return stage;
     }
 
-    public void setStage(ClientsOrderStages stage) {
+    public void setStage(String stage) {
         this.stage = stage;
     }
 
