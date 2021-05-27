@@ -19,9 +19,9 @@ public class ClientService {
     }
 
     public List<Client> findByName(String name) {
-        List <Client> byName = clientDao.findByName(name);
-        if (Objects.isNull(byName)){
-            System.out.println(String.format("Clinet with name %s was not found" , name));
+        List<Client> byName = clientDao.findByName(name);
+        if (Objects.isNull(byName)) {
+            System.out.println(String.format("Clinet with name %s was not found", name));
         }
         return byName;
     }

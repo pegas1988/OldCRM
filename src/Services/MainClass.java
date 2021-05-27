@@ -9,14 +9,14 @@ public class MainClass {
     public static void main(String[] args) {
         ClientService clientService = new ClientService();
         List<Client> allClients = clientService.findAll();
-        for(Client client: allClients){
+        for (Client client : allClients) {
             System.out.println(client);
         }
 
         System.out.println("");
 
         List<Client> byName = clientService.findByName("Romanova");
-        for(Client client: byName){
+        for (Client client : byName) {
             System.out.println(client);
         }
     }
