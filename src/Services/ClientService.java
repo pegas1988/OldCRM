@@ -25,4 +25,12 @@ public class ClientService {
         }
         return byName;
     }
+
+    public void create(Client client) {
+        clientDao.create(client);
+    }
+    public void delete(Client client) {
+        clientDao.delete(client);
+    }
+    public void update(Client client) {clientDao.update(client);}
 }

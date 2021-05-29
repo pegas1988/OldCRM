@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/MainClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utilities/PostgresUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/DaoLayer/ClientDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/Services/ClientService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/Services/MainClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/Utilities/PostgresUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/DailyReport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/Material.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CRM/entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CRM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities/PostgresUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities/PostgresUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ClientsOrderStages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ClientsOrderStages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ProductStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ProductStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Product.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +76,21 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="clients: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -154,8 +171,27 @@
       <workItem from="1622059167568" duration="57000" />
       <workItem from="1622062580700" duration="654000" />
       <workItem from="1622063343241" duration="61000" />
-      <workItem from="1622141029620" duration="7047000" />
+      <workItem from="1622141029620" duration="7429000" />
+      <workItem from="1622223136754" duration="2512000" />
+      <workItem from="1622310741424" duration="2023000" />
+      <workItem from="1622312791867" duration="244000" />
+      <workItem from="1622313164745" duration="2327000" />
     </task>
+    <task id="LOCAL-00001" summary="WorkWithDB">
+      <created>1622149434236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622149434236</updated>
+    </task>
+    <task id="LOCAL-00002" summary="WorkWithDB + ctrl alt l">
+      <created>1622149473663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622149473663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,5 +209,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WorkWithDB" />
+    <MESSAGE value="WorkWithDB + ctrl alt l" />
+    <option name="LAST_COMMIT_MESSAGE" value="WorkWithDB + ctrl alt l" />
   </component>
 </project>

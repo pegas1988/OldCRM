@@ -7,18 +7,20 @@ public class Client {
     private String lastName;
     private Date dateOfBirth;
     private String sex;
-    private String diagnoses;
 
-    @Override
-    public String toString() {
-        return "Client{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", sex='" + sex + '\'' +
-                ", diagnoses='" + diagnoses + '\'' +
-                '}';
+    public Client(){
+
     }
+
+    public Client(String firstName, String lastName, Date dateOfBirth, String sex, String diagnoses) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.sex = sex;
+        this.diagnoses = diagnoses;
+    }
+
+    private String diagnoses;
 
     public String getDiagnoses() {
         return diagnoses;
@@ -58,5 +60,16 @@ public class Client {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", sex='" + sex + '\'' +
+                ", diagnoses='" + diagnoses + '\'' +
+                '}';
     }
 }

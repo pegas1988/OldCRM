@@ -7,7 +7,7 @@ public class Product {
     private int priceOfAllMaterials;
     private List<Material> materialList = new ArrayList<>();
     private int timeToProduce;
-    private ProductStage productStage;
+    private String productStage;
 
     public int getPriceOfAllMaterials() {
         return priceOfAllMaterials;
@@ -33,11 +33,11 @@ public class Product {
         this.timeToProduce = timeToProduce;
     }
 
-    public ProductStage getProductStage() {
+    public String getProductStage() {
         return productStage;
     }
 
-    public void setProductStage(ProductStage productStage) {
+    public void setProductStage(String productStage) {
         this.productStage = productStage;
     }
 }

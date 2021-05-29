@@ -11,11 +11,44 @@ public class ClientDao {
 
     private static final String SELECT_FROM_CLIENT = "select * from clients";
     private static final String SELECT_FROM_CLIENT_BY_NAME = "select * from clients where first_name = ?";
+    private static final String INSERT_INTO_CLIENT = "insert into clients (first_name, last_name, date_of_birth, sex, diagnoses) values (?,?,?,?,?)";
+    private static final String DELETE_FROM_CLIENT = "delete from clients where last_name = ?";
+    private static final String UPDATE_CLIENT_BY_NAME ="update clients set last_name = 'changed' where first_name = ?";
 
     public void create(Client client) {
+        try (Connection connection = PostgresUtil.getConnetion();
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT);
+        ) {
+            preparedStatement.setString(1, client.getFirstName());
+            preparedStatement.setString(2,client.getLastName());
+            preparedStatement.setDate(3, (Date) client.getDateOfBirth());
+            preparedStatement.setString(4, client.getSex());
+            preparedStatement.setString(5, client.getDiagnoses());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
+    public void update(Client client) {
+        try (Connection connection = PostgresUtil.getConnetion();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CLIENT_BY_NAME);
+        ) {
+            preparedStatement.setString(1, client.getFirstName());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public void delete(Client client) {
+        try (Connection connection = PostgresUtil.getConnetion();
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT);
+        ) {
+            preparedStatement.setString(1,client.getLastName());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Client> findAll() {
