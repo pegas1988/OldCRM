@@ -1,10 +1,26 @@
 package entities;
 
 public class User {
+    private Integer userID;
     private String firstname;
     private String lastName;
     private String password;
-    private String userRole;
+    private roles userRole;
+
+    public Integer getUserID() {
+        return userID;
+    }
+
+    public void setUserID(Integer userID) {
+        this.userID = userID;
+    }
+
+    public User(String firstname, String lastName, String password, roles userRole) {
+        this.firstname = firstname;
+        this.lastName = lastName;
+        this.password = password;
+        this.userRole = userRole;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -30,11 +46,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUserRole() {
+    public roles getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(String userRole) {
+    public void setUserRole(roles userRole) {
         this.userRole = userRole;
     }
 

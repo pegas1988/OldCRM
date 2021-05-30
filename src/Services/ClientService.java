@@ -1,9 +1,7 @@
 package Services;
 
 import DaoLayer.ClientDao;
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import entities.Client;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,8 +16,8 @@ public class ClientService {
         return allClients;
     }
 
-    public List<Client> findByName(String name) {
-        List<Client> byName = clientDao.findByName(name);
+    public List<Client> findByName(String name, String secondName) {
+        List<Client> byName = clientDao.findByFirstNameAndSecondName(name, secondName);
         if (Objects.isNull(byName)) {
             System.out.println(String.format("Clinet with name %s was not found", name));
         }
@@ -32,5 +30,5 @@ public class ClientService {
     public void delete(Client client) {
         clientDao.delete(client);
     }
-    public void update(Client client) {clientDao.update(client);}
+    //public void update(Client client) {clientDao.update(client);}
 }

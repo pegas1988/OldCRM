@@ -3,12 +3,41 @@ package entities;
 import java.util.Date;
 
 public class Client {
+
+    private Integer ClientID;
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
     private String sex;
+    private int phoneNumber;
+    private String diagnose;
+    private String twoDScanname;
 
-    public Client(){
+    public String getTwoDScan() {
+        return twoDScanname;
+    }
+
+    public void setTwoDScan(String twoDScan) {
+        this.twoDScanname = twoDScan;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getDiagnose() {
+        return diagnose;
+    }
+
+    public void setDiagnose(String diagnose) {
+        this.diagnose = diagnose;
+    }
+
+    public Client() {
 
     }
 

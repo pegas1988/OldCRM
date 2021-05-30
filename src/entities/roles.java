@@ -1,7 +1,7 @@
 package entities;
 
 
-enum roles {
+public enum roles {
     DIAGNOST,
     DESIGNER,
     RECEPTIONGIRL,

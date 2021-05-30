@@ -7,7 +7,7 @@ import java.util.List;
 public class DailyReport {
     private List<Product> madeProducts = new ArrayList<>();
     private Date date;
-    private User responsiblePerson;
+    private String responsiblePerson;
 
     public List<Product> getMadeProducts() {
         return madeProducts;
@@ -25,11 +25,11 @@ public class DailyReport {
         this.date = date;
     }
 
-    public User getResponsiblePerson() {
+    public String getResponsiblePerson() {
         return responsiblePerson;
     }
 
-    public void setResponsiblePerson(User responsiblePerson) {
-        this.responsiblePerson = responsiblePerson;
+    public void setResponsiblePerson(String user) {
+        this.responsiblePerson = user;
     }
 }

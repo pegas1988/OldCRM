@@ -9,18 +9,18 @@ import java.util.List;
 
 public class ClientDao {
 
-    private static final String SELECT_FROM_CLIENT = "select * from clients";
-    private static final String SELECT_FROM_CLIENT_BY_NAME = "select * from clients where first_name = ?";
-    private static final String INSERT_INTO_CLIENT = "insert into clients (first_name, last_name, date_of_birth, sex, diagnoses) values (?,?,?,?,?)";
-    private static final String DELETE_FROM_CLIENT = "delete from clients where last_name = ?";
-    private static final String UPDATE_CLIENT_BY_NAME ="update clients set last_name = 'changed' where first_name = ?";
+    private static final String SELECT_FROM_CLIENT = "select * from client";
+    private static final String SELECT_FROM_CLIENT_WHERE_FIRST_NAME_AND_LAST_NAME = "select * from client where first_name = ? and last_name = ?";
+    private static final String INSERT_INTO_CLIENT = "insert into client (first_name, last_name, date_of_birth, sex, diagnoses) values (?,?,?,?,?)";
+    private static final String DELETE_FROM_CLIENT = "delete from client where last_name = ?";
+    //private static final String UPDATE_CLIENTS_Di_BY_NAME = "update client set last_name = 'changed' where first_name = ?";
 
     public void create(Client client) {
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT);
         ) {
             preparedStatement.setString(1, client.getFirstName());
-            preparedStatement.setString(2,client.getLastName());
+            preparedStatement.setString(2, client.getLastName());
             preparedStatement.setDate(3, (Date) client.getDateOfBirth());
             preparedStatement.setString(4, client.getSex());
             preparedStatement.setString(5, client.getDiagnoses());
@@ -30,7 +30,7 @@ public class ClientDao {
         }
     }
 
-    public void update(Client client) {
+    /*public void updateDiagnose(Client client) {
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CLIENT_BY_NAME);
         ) {
@@ -39,12 +39,13 @@ public class ClientDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
+
     public void delete(Client client) {
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT);
         ) {
-            preparedStatement.setString(1,client.getLastName());
+            preparedStatement.setString(1, client.getLastName());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,12 +73,13 @@ public class ClientDao {
         return clients;
     }
 
-    public List<Client> findByName(String name) {
+    public List<Client> findByFirstNameAndSecondName(String name, String secondName) {
         List<Client> clients = new ArrayList<>();
         try (Connection connection = PostgresUtil.getConnetion();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CLIENT_BY_NAME);
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CLIENT_WHERE_FIRST_NAME_AND_LAST_NAME);
         ) {
             preparedStatement.setString(1, name);
+            preparedStatement.setString(2, secondName);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Client client = new Client();

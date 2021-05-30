@@ -1,18 +1,27 @@
 package entities;
 
 public class Material {
-    private int quantityInGrams;
+    private String materialName;
+    private int quantity;
     private String colour;
     private String density;
     private String type;
     private int price;
 
-    public int getQuantityInGrams() {
-        return quantityInGrams;
+    public String getMaterialName() {
+        return materialName;
     }
 
-    public void setQuantityInGrams(int quantityInGrams) {
-        this.quantityInGrams = quantityInGrams;
+    public void setMaterialName(String materialName) {
+        this.materialName = materialName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getColour() {

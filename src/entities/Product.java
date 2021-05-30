@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
+    private String productName;
     private int priceOfAllMaterials;
     private List<Material> materialList = new ArrayList<>();
     private int timeToProduce;
-    private String productStage;
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
     public int getPriceOfAllMaterials() {
         return priceOfAllMaterials;
@@ -32,12 +40,5 @@ public class Product {
     public void setTimeToProduce(int timeToProduce) {
         this.timeToProduce = timeToProduce;
     }
-
-    public String getProductStage() {
-        return productStage;
-    }
-
-    public void setProductStage(String productStage) {
-        this.productStage = productStage;
-    }
 }
+

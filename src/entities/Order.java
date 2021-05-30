@@ -1,15 +1,43 @@
 package entities;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
+    private Integer orderID;
     private Date dateCreating;
-    private Product product[];
+    private List<Product> product;
     private int totalPrice;
     private Date dateToBeDone;
+    private String lifeCycle;
     private String stage;
     private Client client;
     private String comments;
+    private String responsibleUser;
+
+    public String getLifeCycle() {
+        return lifeCycle;
+    }
+
+    public void setLifeCycle(String lifeCycle) {
+        this.lifeCycle = lifeCycle;
+    }
+
+    public Integer getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(Integer orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getResponsibleUser() {
+        return responsibleUser;
+    }
+
+    public void setResponsibleUser(String responsibleUser) {
+        this.responsibleUser = responsibleUser;
+    }
 
     public String getComments() {
         return comments;
@@ -27,11 +55,11 @@ public class Order {
         this.dateCreating = dateCreating;
     }
 
-    public Product[] getProduct() {
+    public List<Product> getProduct() {
         return product;
     }
 
-    public void setProduct(Product[] product) {
+    public void setProduct(List<Product> product) {
         this.product = product;
     }
 
