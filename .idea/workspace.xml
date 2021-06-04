@@ -2,37 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/DailyReportDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/Exception/DAOException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/MaterialDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/ProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DaoLayer/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/DailyReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/MaterialService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Stages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRM/DaoLayer/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRM/DaoLayer/ClientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRM/Services/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRM/Services/MainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRM/entities/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRM/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CRM/entities/roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ClientsOrderStages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/DailyReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/DailyReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ProductStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/DaoLayer/ClientDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/DaoLayer/Exception/DAOException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/DaoLayer/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/Services/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/Services/MainClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/Services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/Utilities/PostgresUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/DailyReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Material.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/Stages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CRM/entities/stageOfTheProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/ClientDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/DailyReportDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/Exception/DAOException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/MaterialDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/OrderDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaoLayer/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/DailyReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MaterialService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilities/PostgresUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/DailyReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Material.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Stages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/roles.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,52 +101,7 @@
         <item name="postgres: database" type="162271b6:PgImplModel$Database" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="client: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="daily_report: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="materials: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="Order: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="product: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="user: table" type="69fad909:PgImplModel$LocalTable" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -144,12 +111,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="postgres@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="postgres@localhost [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -175,9 +136,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/PostgreSQL/42.2.5/postgresql-42.2.5.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -194,11 +155,11 @@
   </component>
   <component name="RunManager">
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Services.MainClass" />
+      <option name="MAIN_CLASS_NAME" value="service.MainClass" />
       <module name="CRM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Services.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,6 +172,41 @@
         <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7201f641" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@562c5289" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@555ce9cb" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2b34bb13" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -236,7 +232,9 @@
       <workItem from="1622310741424" duration="2023000" />
       <workItem from="1622312791867" duration="244000" />
       <workItem from="1622313164745" duration="6782000" />
-      <workItem from="1622365220450" duration="18621000" />
+      <workItem from="1622365220450" duration="19182000" />
+      <workItem from="1622660713846" duration="14484000" />
+      <workItem from="1622822104902" duration="2195000" />
     </task>
     <task id="LOCAL-00001" summary="WorkWithDB">
       <created>1622149434236</created>
