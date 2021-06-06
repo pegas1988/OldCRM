@@ -11,6 +11,11 @@ public class User {
         return userID;
     }
 
+    public User(String firstname, String lastName) {
+        this.firstname = firstname;
+        this.lastName = lastName;
+    }
+
     public void setUserID(Integer userID) {
         this.userID = userID;
     }
