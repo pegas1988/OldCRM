@@ -3,39 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
-    <servlet>
-        <servlet-name>MainServlet</servlet-name>
-        <servlet-class>servlet.DispatcherServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>MainServlet</servlet-name>
-        <url-pattern>/CRM_war</url-pattern>
-    </servlet-mapping>
-
-    <!-- add servlet -->
-    <servlet>
-        <servlet-name>add</servlet-name>
-        <servlet-class>controller.AddUserController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
-
-    <!-- list servlet -->
-    <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>controller.ShowListOfUsersController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
-    </servlet-mapping>
-
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/jsp/error-404.jsp</location>
