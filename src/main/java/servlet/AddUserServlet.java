@@ -1,5 +1,9 @@
 package servlet;
 
+import entity.User;
+import entity.roles;
+import service.UserService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,5 +20,18 @@ public class AddUserServlet extends HttpServlet {
         /*PrintWriter writer = resp.getWriter();
         writer.println("I am add servlet");*/
         req.getRequestDispatcher("/WEB-INF/jsp/addUser.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("firstName");
+        String lastName = req.getParameter("lastName");
+        String email = req.getParameter("email");
+        String userRole = req.getParameter("userRole");
+        String password = req.getParameter("psw");
+
+        User user = new User(email, name, lastName, password, roles.valueOf(userRole));
+        UserService us = new UserService();
+        us.create(user);
     }
 }

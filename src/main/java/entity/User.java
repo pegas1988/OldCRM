@@ -1,11 +1,29 @@
 package entity;
 
 public class User {
+
     private Integer userID;
+    private String email;
     private String firstName;
     private String lastName;
     private String password;
     private roles userRole;
+
+    public User(String email, String firstName, String lastName, String password, roles userRole) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.userRole = userRole;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Integer getUserID() {
         return userID;

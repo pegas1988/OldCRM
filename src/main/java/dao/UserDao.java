@@ -12,7 +12,7 @@ public class UserDao {
 
     private static final String SELECT_FROM_USER = "select * from \"user\"";
     private static final String SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME = "select * from \"user\" where first_name = ? and last_name = ?";
-    private static final String INSERT_INTO_USER = "insert into \"user\" (first_name, last_name, password, user_role, user_id) VALUES (?,?,?,?,?)";
+    private static final String INSERT_INTO_USER = "insert into \"user\" (first_name, last_name, password, user_role, email) VALUES (?,?,?,?,?)";
     private static final String DELETE_FROM_USER = "delete from \"user\" where first_name = ? and last_name = ?";
     private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update \"user\" set password = ? where first_name = ? and last_name = ? and password = ?";
 
@@ -23,7 +23,7 @@ public class UserDao {
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.setString(4, user.getUserRole().toString());
-            preparedStatement.setInt(5, user.getUserID());
+            preparedStatement.setString(5, user.getEmail());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -6,7 +6,7 @@
 <body>
 <link href="css/style.css" rel="stylesheet">
 <center>
-<form action="action_page.php" style="border:1px solid #ccc">
+<form method = "post">
     <div class="container">
         <h1>Add a new User!</h1>
         <p>Please fill in this form to create a new User.</p>
@@ -18,13 +18,11 @@
 
         <input type="text" placeholder="Enter Email" name="email" required>
 
-        <input type="text" placeholder="Enter userRole" name="userrolew" required>
+        <input type="text" placeholder="Enter userRole" name="userRole" required>
 
 
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
         <div style="text-align: center;">
         <div class="clearfix">
