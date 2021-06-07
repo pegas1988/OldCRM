@@ -19,7 +19,7 @@ public class UserDao {
     public void create(User user) {
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER)) {
-            preparedStatement.setString(1, user.getFirstname());
+            preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.setString(4, user.getUserRole().toString());
@@ -35,7 +35,7 @@ public class UserDao {
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD)
         ) {
             preparedStatement.setString(1, newPassword);
-            preparedStatement.setString(2, user.getFirstname());
+            preparedStatement.setString(2, user.getFirstName());
             preparedStatement.setString(3, user.getLastName());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.executeUpdate();
@@ -47,7 +47,7 @@ public class UserDao {
     public void deleteFromUser(User user) {
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_USER)) {
-            preparedStatement.setString(1, user.getFirstname());
+            preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.execute();
         } catch (SQLException e) {
@@ -60,11 +60,11 @@ public class UserDao {
         ResultSet resultSet = null;
         try (Connection connection = PostgresUtil.getConnetion();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME)) {
-            preparedStatement.setString(1, user.getFirstname());
+            preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                searchedUser.setFirstname(resultSet.getString("first_name"));
+                searchedUser.setFirstName(resultSet.getString("first_name"));
                 searchedUser.setLastName(resultSet.getString("last_name"));
                 searchedUser.setPassword(resultSet.getString("password"));
                 searchedUser.setUserRole(roles.valueOf(resultSet.getString("user_role")));
@@ -84,7 +84,7 @@ public class UserDao {
         ) {
             while (resultSet.next()) {
                 User user = new User();
-                user.setFirstname(resultSet.getString("first_name"));
+                user.setFirstName(resultSet.getString("first_name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setPassword(resultSet.getString("password"));
                 user.setUserID(resultSet.getInt("user_id"));

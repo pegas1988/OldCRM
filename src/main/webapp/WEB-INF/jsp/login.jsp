@@ -1,29 +1,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <style>
-        .center{
-            margin-left: auto;
-            margin-right: auto;
-            width: 8em
-        }
-    </style>
     <title>Title</title>
 </head>
 <body>
-<div class="center">
-    <center>
-        <form method="post">
-            Please login
-            <br>
-            <input type="text" name="userName"/>
-            <input type="text" name="userLastName"/>
-            <input type="password" name="password"/>
-            <br>
-            <button name="Submit" value="Login" type="Submit">Login</button>
-        </form>
-    </center>
-</div>
+<link href="css/style.css" rel="stylesheet">
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Welcome back!</h1>
+        <p>Please fill this form to get in</p>
+        <hr>
+
+        <input type="text" placeholder="Enter FirstName" name="firstName" required>
+
+        <input type="text" placeholder="Enter LastName" name="lastName" required>
+
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+        <div class="clearfix">
+
+            <button type="submit" class="signupbtn">Sign in</button>
+        </div>
+    </div>
+</form>
 </body>
 </html>
-

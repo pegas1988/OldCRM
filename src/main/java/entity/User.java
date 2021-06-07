@@ -2,7 +2,7 @@ package entity;
 
 public class User {
     private Integer userID;
-    private String firstname;
+    private String firstName;
     private String lastName;
     private String password;
     private roles userRole;
@@ -11,8 +11,8 @@ public class User {
         return userID;
     }
 
-    public User(String firstname, String lastName) {
-        this.firstname = firstname;
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
         this.lastName = lastName;
     }
 
@@ -20,19 +20,19 @@ public class User {
         this.userID = userID;
     }
 
-    public User(String firstname, String lastName, String password, roles userRole) {
-        this.firstname = firstname;
+    public User(String firstName, String lastName, String password, roles userRole) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.userRole = userRole;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

@@ -6,8 +6,10 @@
     <title>Profile </title>
 </head>
 <body>
-<p>Id : ${user.id}</p>
-<p>Name : ${user.name}</p>
+<p>Id : ${user.userID}</p>
+<p>Name : ${user.firstname}</p>
+<p>LastName : ${user.lastName}</p>
 <p>Password : ${user.password}</p>
+<p>UserRole : ${user.userRole}</p>
 </body>
 </html>
