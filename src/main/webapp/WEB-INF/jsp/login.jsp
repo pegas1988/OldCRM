@@ -75,7 +75,7 @@
 </head>
 <body>
 <center>
-<form>
+<form method="post">
     <div class="container">
         <h1>Welcome back!</h1>
         <p>Please fill this form to get in</p>
@@ -90,7 +90,7 @@
 
         <div class="clearfix">
 
-            <button type="submit" class="signupbtn">Sign in</button>
+            <button name = "Submit" value="Login" type="Submit" class="signupbtn">Sign in</button>
         </div>
     </div>
 </form>
