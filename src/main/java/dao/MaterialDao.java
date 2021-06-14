@@ -24,7 +24,7 @@ public class MaterialDao {
             preparedStatement.setInt(5, material.getPrice());
             preparedStatement.setString(6, material.getMaterialName());
             preparedStatement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -34,7 +34,7 @@ public class MaterialDao {
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_MATERIAL_BY_NAME)) {
             preparedStatement.setString(1, material.getMaterialName());
             preparedStatement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -49,7 +49,7 @@ public class MaterialDao {
             while (resultSet.next()) {
                 materialID = resultSet.getInt("material_id");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return materialID;
@@ -62,7 +62,7 @@ public class MaterialDao {
              ResultSet resultSet = statement.executeQuery(FIND_ALL)
         ) {
             makeMaterial(materials, resultSet);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return materials;
@@ -76,7 +76,7 @@ public class MaterialDao {
             preparedStatement.setString(1, type);
             ResultSet resultSet = preparedStatement.executeQuery();
             makeMaterial(materials, resultSet);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return materials;

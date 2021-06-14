@@ -12,12 +12,12 @@ public class LoginController implements Controller{
 
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
-        String userName = req.getParameter("userName");
-        String userLastName = req.getParameter("userLastName");
-        String password = req.getParameter("password");
-        User userforSearch = new User(userName, userLastName);
-        User user = userService.findByFirstAndLastName(userforSearch);
-
+        String userName = req.getParameter("firstName");
+        String userLastName = req.getParameter("lastName");
+        String password = req.getParameter("psw");
+        User userFind = new User(userName, userLastName);
+        User user = userService.findByFirstAndLastName(userFind);
+        System.out.println(user.toString());
         if(user.getPassword().equals(password)) {
             req.setAttribute("user", user);
             return new ControllerResultDto("profile");

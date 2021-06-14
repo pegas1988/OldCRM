@@ -17,8 +17,6 @@ import java.io.PrintWriter;
 public class AddUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*PrintWriter writer = resp.getWriter();
-        writer.println("I am add servlet");*/
         req.getRequestDispatcher("/WEB-INF/jsp/addUser.jsp").forward(req, resp);
     }
 
@@ -33,5 +31,6 @@ public class AddUserServlet extends HttpServlet {
         User user = new User(email, name, lastName, password, roles.valueOf(userRole));
         UserService us = new UserService();
         us.create(user);
+        req.getRequestDispatcher("/WEB-INF/jsp/userWasCreated.jsp").forward(req, resp);
     }
 }

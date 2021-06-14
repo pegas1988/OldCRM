@@ -25,7 +25,7 @@ public class ClientDao {
             preparedStatement.setString(4, client.getSex());
             preparedStatement.setString(5, client.getDiagnoses());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -47,7 +47,7 @@ public class ClientDao {
         ) {
             preparedStatement.setString(1, client.getLastName());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -67,7 +67,7 @@ public class ClientDao {
                 client.setDateOfBirth(resultSet.getTimestamp("date_of_birth"));
                 clients.add(client);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return clients;
@@ -90,7 +90,7 @@ public class ClientDao {
                 client.setDateOfBirth(resultSet.getTimestamp("date_of_birth"));
                 clients.add(client);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return clients;

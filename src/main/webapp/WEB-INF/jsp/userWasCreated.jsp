@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Congratulations!</title>
 </head>
 <body>
-$END$
+<h1>User was created!</h1>
+<p>If you wish to add new one, please push button "Create one more"</p>
+<button onclick="window.location.href='/CRM_war/add';">
+    Create on more user
+</button>
 </body>
 </html>

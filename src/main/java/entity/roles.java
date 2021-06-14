@@ -13,6 +13,7 @@ public enum roles {
     WORKER,
     CEO,
     MAINCOUNTER,
-    MARKETING
+    MARKETING,
+    ADMIN
 }
 

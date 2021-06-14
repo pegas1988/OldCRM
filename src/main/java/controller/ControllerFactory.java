@@ -12,6 +12,7 @@ public class ControllerFactory {
         controllerMap.put("GET/profile", new ShowPageController("profile"));
         controllerMap.put("GET/login", new ShowPageController("login"));
         controllerMap.put("GET/list", new ShowPageController("list"));
+        controllerMap.put("POST/login", new LoginController());
     }
 
     public Controller getController(HttpServletRequest request) {

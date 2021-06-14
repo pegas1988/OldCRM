@@ -1,99 +1,43 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <style>
-        * {box-sizing: border-box}
-        input[type=text], input[type=password] {
-            width: 50%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            display: inline-block;
-            border: none;
-            background: #ddd;
-        }
-        input[type=text]:focus, input[type=password]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
-
-        /* Set a style for all buttons */
-        button {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 25%;
-            opacity: 0.9;
-        }
-
-        button:hover {
-            opacity:1;
-        }
-
-        /* Extra styles for the cancel button */
-        .cancelbtn {
-            padding: 14px 20px;
-            background-color: #f44336;
-        }
-
-        /* Float cancel and signup buttons and add an equal width */
-        .cancelbtn, .signupbtn {
-
-            width: 25%;
-        }
-
-        /* Add padding to container elements */
-        .container {
-            padding: 16px;
-        }
-
-        /* Clear floats */
-        .clearfix::after {
-            osition: absolute;
-            left: 50%;
-            margin: -25px 0 0 -25px;
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        /* Change styles for cancel button and signup button on extra small screens */
-        @media screen and (max-width: 300px) {
-            .cancelbtn, .signupbtn {
-                width: 25%;
-            }
-        }
-    </style>
+    <title>LoginPage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<center>
 <form method="post">
-    <div class="container">
-        <h1>Welcome back!</h1>
-        <p>Please fill this form to get in</p>
-        <hr>
+    <div class="container mb-3 mt-3 w-50 p-3" style="background-color: #fff;">
+        <center>
+            <h1>Welcome back!</h1>
+            <p class="text-primary">Please fill this form to get in</p>
+        </center>
 
-        <input type="text" placeholder="Enter FirstName" name="firstName" required>
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Enter FirstName"
+                   name="firstName" required>
+        </div>
 
-        <input type="text" placeholder="Enter LastName" name="lastName" required>
+        <div class="mb-3">
+            <label for="exampleInputLastName" class="form-label">LastName</label>
+            <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter LastName"
+                   name="lastName" required>
+        </div>
 
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-
-        <div class="clearfix">
-
-            <button name = "Submit" value="Login" type="Submit" class="signupbtn">Sign in</button>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+        </div>
+        <div class="d-grid gap-2">
+            <button name="Submit" value="Login" type="Submit" class="btn btn-primary">Login</button>
+            <button class="btn btn-success" onclick="window.location.href='/CRM_war/add';">
+                Create new user
+            </button>
         </div>
     </div>
 </form>
-</center>
 </body>
 </html>

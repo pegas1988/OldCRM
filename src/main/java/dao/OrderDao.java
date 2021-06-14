@@ -29,7 +29,7 @@ public class OrderDao {
 
             }
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -40,7 +40,7 @@ public class OrderDao {
         ) {
             preparedStatement.setString(1, order.getLifeCycle());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -61,7 +61,7 @@ public class OrderDao {
                 order.setResponsibleUser(resultSet.getString("responsible_person"));
                 orders.add(order);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return orders;
@@ -82,7 +82,7 @@ public class OrderDao {
                 order.setDateCreating(resultSet.getTimestamp("creating_date"));
                 order.setResponsibleUser(resultSet.getString("responsible_person"));
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return order;
@@ -95,7 +95,7 @@ public class OrderDao {
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_PRODUCT)) {
             preparedStatement.setString(1, product);
             ordersCreating(orders, preparedStatement);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return orders;
@@ -108,7 +108,7 @@ public class OrderDao {
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_CREATING_DATE)) {
             preparedStatement.setDate(1, date);
             ordersCreating(orders, preparedStatement);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return orders;

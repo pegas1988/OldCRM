@@ -25,7 +25,7 @@ public class DailyReportDao {
                 report.setResponsiblePerson(resultSet.getString("responsible_person"));
                 dailyReports.add(report);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return dailyReports;
@@ -45,7 +45,7 @@ public class DailyReportDao {
                 dailyReports.add(report);
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return dailyReports;
@@ -58,7 +58,7 @@ public class DailyReportDao {
             preparedStatement.setString(2, report.getResponsiblePerson());
             preparedStatement.setDate(1, (Date) report.getDate());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

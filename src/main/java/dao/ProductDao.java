@@ -27,7 +27,7 @@ public class ProductDao {
                 product.setProductName(resultSet.getString("product_name"));
                 products.add(product);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return products;
@@ -43,7 +43,7 @@ public class ProductDao {
             while (resultSet.next()) {
                 productID = resultSet.getInt("product_id");
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return productID;
@@ -64,7 +64,7 @@ public class ProductDao {
                 preparedStatementProductID.setInt(2, materialDao.materialID(product.getMaterialList().get(e)));
                 preparedStatementProductID.execute();
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -74,7 +74,7 @@ public class ProductDao {
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_PRODUCT)) {
             preparedStatement.setString(1, product.getProductName());
             preparedStatement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

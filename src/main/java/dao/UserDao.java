@@ -25,7 +25,7 @@ public class UserDao {
             preparedStatement.setString(4, user.getUserRole().toString());
             preparedStatement.setString(5, user.getEmail());
             preparedStatement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -39,7 +39,7 @@ public class UserDao {
             preparedStatement.setString(3, user.getLastName());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -50,7 +50,7 @@ public class UserDao {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.execute();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -69,8 +69,9 @@ public class UserDao {
                 searchedUser.setPassword(resultSet.getString("password"));
                 searchedUser.setUserRole(roles.valueOf(resultSet.getString("user_role")));
                 searchedUser.setUserID(resultSet.getInt("user_id"));
+                searchedUser.setEmail(resultSet.getString("email"));
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return searchedUser;
@@ -91,7 +92,7 @@ public class UserDao {
                 user.setUserRole(roles.valueOf(resultSet.getString("user_role")));
                 users.add(user);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return users;
