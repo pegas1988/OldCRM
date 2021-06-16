@@ -6,6 +6,7 @@
     <title>Profile </title>
 </head>
 <body>
+<h2>Your data are under this text:</h2>
 <p>Id : ${user.userID}</p>
 <p>Name : ${user.firstName}</p>
 <p>LastName : ${user.lastName}</p>

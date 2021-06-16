@@ -6,7 +6,7 @@ import service.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginController implements Controller{
+public class LoginController implements Controller {
 
     private UserService userService = new UserService();
 
@@ -18,11 +18,19 @@ public class LoginController implements Controller{
         User userFind = new User(userName, userLastName);
         User user = userService.findByFirstAndLastName(userFind);
         System.out.println(user.toString());
-        if(user.getPassword().equals(password)) {
+        if (user.getPassword().equals(password)) {
             req.setAttribute("user", user);
-            return new ControllerResultDto("profile");
-        } else {
+            switch (user.getUserRole()) {
+                case DESIGNER:
+                    return new ControllerResultDto("designer");
+                case DOCTOR:
+                    return new ControllerResultDto("doctor");
+                case ADMIN:
+                    return new ControllerResultDto("admin");
+                default:
+                    return new ControllerResultDto("error-403");
+            }
+        } else
             return new ControllerResultDto("error-403");
-        }
     }
 }
