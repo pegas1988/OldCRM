@@ -13,6 +13,10 @@ public class UserService {
         userDao.create(user);
     }
 
+    public User findByEmail(User user){
+        return userDao.findByEmail(user);
+    }
+
     public void updateUserPasswordByName(User user, String newPassword) {
         userDao.updateUserPassword(user, newPassword);
     }

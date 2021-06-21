@@ -43,7 +43,7 @@ public class ClientDao {
 
     public void delete(Client client) {
         try (Connection connection = PostgresUtil.getConnetion();
-             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT);
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT)
         ) {
             preparedStatement.setString(1, client.getLastName());
             preparedStatement.executeUpdate();

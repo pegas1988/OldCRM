@@ -4,7 +4,7 @@
   Date: 14.06.2021
   Time: 23:18
   To change this template use File | Settings | File Templates.
---%>
+    --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,37 +18,59 @@
 
 <center>
     <h2>Choose the option, Master:</h2>
-
-    <div class="card m-3" style="width: 18rem;">
-        <img src="icons/users.png" class="card-img-top" alt="users">
-        <div class="card-body">
-            <h5 class="card-title">Users</h5>
-            <p class="card-text">Created, Update, Delete user. See list of all users</p>
-            <a href="/CRM_war/add" class="btn btn-primary">Choose the option</a>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="CRM_war/.../icons/001_rats.jpg" class="card-img-top" alt="users"/>
+                <div class="card-body">
+                    <h5 class="card-title">Users</h5>
+                    <p class="card-text">Choose the option:</p>
+                    <a href="/CRM_war/add" style="width: 6rem;" class="btn btn-primary m-1">Create</a>
+                    <a href="/CRM_war/CRM_war/updateUser" style="width: 6rem;" class="btn btn-primary m-1">Update</a>
+                    <a href="/CRM_war/CRM_war/deleteUser" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
+                    <a href="/CRM_war/list" style="width: 6rem;" class="btn btn-primary m-1">See all</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <img src="icons/materials.png" class="card-img-top" alt="Card image">
-        <div class="card-body">
-            <h5 class="card-title">Materials</h5>
-            <p class="card-text">Created, Update, Delete material. See list of all materials</p>
-            <a href="icons/bird.jpg" class="btn btn-primary">Choose the option</a>
+        <div class="col-sm-3">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="icons/materials.png" class="card-img-top" alt="Card image"/>
+                <div class="card-body">
+                    <h5 class="card-title">Materials</h5>
+                    <p class="card-text">Choose the option:</p>
+                    <a href="/CRM_war//createMaterial" style="width: 6rem;"
+                       class="btn btn-primary m-1">Create</a>
+                    <a href="/CRM_war/updateMaterial" style="width: 6rem;" class="btn btn-primary m-1">Update</a>
+                    <a href="/CRM_war/deleteMaterial" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
+                    <a href="/CRM_war/findAllMaterials" style="width: 6rem;" class="btn btn-primary m-1">See all</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <img src="D:\MyApps\CRM\src\main\resources\icons\products" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Products</h5>
-            <p class="card-text">Created, Update, Delete product. See list of all products</p>
-            <a href="/CRM_war/addProduct" class="btn btn-primary">Choose the option</a>
+        <div class="col-sm-3">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="${pageContext.request.contextPath}icons/products.png" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title">Products</h5>
+                    <p class="card-text">Choose the option:</p>
+                    <a href="/CRM_war/addProduct" style="width: 6rem;" class="btn btn-primary m-1">Create</a>
+                    <a href="/CRM_war/updateProduct" style="width: 6rem;" class="btn btn-primary m-1">Update</a>
+                    <a href="/CRM_war/deleteProduct" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
+                    <a href="/CRM_war/findAllProducts" style="width: 6rem;" class="btn btn-primary m-1">See all</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card m-3" style="width: 18rem;">
-        <img src="D:\MyApps\CRM\src\main\resources\icons\leads.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">User work</h5>
-            <p class="card-text">Created, Update, Delete lead. See list of all leads</p>
-            <a href="/CRM_war/addLead" class="btn btn-primary">Choose the option</a>
+        <div class="col-sm-3">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="${pageContext.request.contextPath}icon/leads.png" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title">Leads</h5>
+                    <p class="card-text">Choose the option:</p>
+                    <a href="/CRM_war/addLead" style="width: 6rem;" class="btn btn-primary m-1">Creat</a>
+                    <a href="/CRM_war/updateLead" style="width: 6rem;" class="btn btn-primary m-1">Update</a>
+                    <a href="/CRM_war/deleteLead" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
+                    <a href="/CRM_war/findAllLeads" style="width: 6rem;" class="btn btn-primary m-1">See all</a>
+                </div>
+            </div>
         </div>
     </div>
 

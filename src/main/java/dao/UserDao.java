@@ -15,6 +15,7 @@ public class UserDao {
     private static final String INSERT_INTO_USER = "insert into \"user\" (first_name, last_name, password, user_role, email) VALUES (?,?,?,?,?)";
     private static final String DELETE_FROM_USER = "delete from \"user\" where first_name = ? and last_name = ?";
     private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update \"user\" set password = ? where first_name = ? and last_name = ? and password = ?";
+    private static final String FIND_USER_BY_EMAIL = "select * from \"user\" where email =?";
 
     public void create(User user) {
         try (Connection connection = PostgresUtil.getConnetion();
@@ -96,5 +97,27 @@ public class UserDao {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public User findByEmail(User userFind) {
+        User userToFind = new User();
+        ResultSet resultSet = null;
+        try (Connection connection = PostgresUtil.getConnetion();
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL)) {
+            preparedStatement.setString(1, userFind.getEmail());
+            resultSet = preparedStatement.executeQuery();
+            {
+                while (resultSet.next()) {
+                    userToFind.setFirstName(resultSet.getString("first_name"));
+                    userToFind.setLastName(resultSet.getString("last_name"));
+                    userToFind.setPassword(resultSet.getString("password"));
+                    userToFind.setUserID(resultSet.getInt("user_id"));
+                    userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return userToFind;
     }
 }
