@@ -1,7 +1,5 @@
 package controller;
 
-import service.UpdateUserController;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +17,9 @@ public class ControllerFactory {
         controllerMap.put("POST/updateUser", new UpdateUserController());
         controllerMap.put("GET/updateProceed", new ShowPageController("updateProceed"));
         controllerMap.put("POST/updateProceed", new UpdateProceedController());
+        controllerMap.put("GET/userUpdated", new ShowPageController("userUpdated"));
+        controllerMap.put("GET/userDelete", new ShowPageController("userDelete"));
+        controllerMap.put("POST/userDelete", new DeleteUserController());
     }
 
     public Controller getController(HttpServletRequest request) {

@@ -17,7 +17,6 @@ public class LoginController implements Controller {
         String password = req.getParameter("psw");
         User userFind = new User(userName, userLastName);
         User user = userService.findByFirstAndLastName(userFind);
-        System.out.println(user.toString());
         if (user.getPassword().equals(password)) {
             req.setAttribute("user", user);
             switch (user.getUserRole()) {

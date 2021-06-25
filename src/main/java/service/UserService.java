@@ -9,6 +9,10 @@ import java.util.List;
 public class UserService {
     UserDao userDao = new UserDao();
 
+    public void updateUser(User user)
+    {
+        userDao.updateUser(user);
+    }
     public void create(User user) {
         userDao.create(user);
     }

@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--@elvariable id="user" type="entity\User"--%>
+<%--@elvariable id="user" type="entity.User"--%>
 <html>
 <head>
-    <title>AddNewUser</title>
+    <title>UpdateUser</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -39,14 +39,6 @@
         </div>
 
         <div class="mb-3">
-            <p>Current email: ${user.email}</p>
-            <input type="text" class="form-control" id="exampleInputEmail" placeholder="Please enter new email"
-                   name="email"
-                   required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-
-        <div class="mb-3">
             <p>Current userrole: ${user.userRole}</p>
             <select class="form-select" aria-label="Choose the role" id="userRole" name="userRole">
                 <option selected>Click here to show the list of roles</option>
@@ -64,7 +56,7 @@
         </div>
 
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button name="Submit" type="submit" class="btn btn-primary">Update</button>
         </div>
 
     </div>

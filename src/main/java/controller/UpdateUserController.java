@@ -1,8 +1,9 @@
-package service;
+package controller;
 
 import controller.Controller;
 import controller.ControllerResultDto;
 import entity.User;
+import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,6 @@ public class UpdateUserController implements Controller {
         String email = req.getParameter("email");
         User userFind = new User(email);
         User user = userService.findByEmail(userFind);
-        System.out.println();
         req.setAttribute("user", user);
         return new ControllerResultDto("updateProceed");
     }
