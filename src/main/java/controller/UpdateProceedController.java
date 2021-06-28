@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UpdateProceedController implements Controller {
+
     UserService userService = new UserService();
+
     @Override
     public ControllerResultDto execute(@org.jetbrains.annotations.NotNull HttpServletRequest req, HttpServletResponse resp) {
         String userName = req.getParameter("firstName");

@@ -10,4 +10,5 @@ public class ControllerResultDto {
     public String getView() {
         return view;
     }
+
 }

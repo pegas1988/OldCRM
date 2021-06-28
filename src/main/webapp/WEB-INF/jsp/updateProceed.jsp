@@ -25,11 +25,13 @@
         </center>
 
         <div class="mb-3">
+
             <p>Current name: ${user.firstName}</p>
             <label for="exampleInputName" class="form-label"></label>
             <input type="text" class="form-control" id="exampleInputName" placeholder="Please enter new name"
                    name="firstName"
                    required>
+
         </div>
         <div class="mb-3">
             <p>Current lastname: ${user.lastName}</p>

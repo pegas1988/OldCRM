@@ -6,8 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="WorkWithDB + ctrl alt l">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerResultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerResultDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UpdateProceedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateProceedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/updateProceed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/updateProceed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/updateUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/updateUser.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -422,12 +426,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/UpdateUserController.java</url>
-          <line>15</line>
+          <line>16</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/UpdateProceedController.java</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
