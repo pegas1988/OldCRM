@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -57,8 +58,12 @@
             <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
         </div>
 
+        <div class="mb-3">
+            <input type="hidden" class="form-control" value="${user.email}" name="oldEmail" required>
+        </div>
+
         <div class="d-grid gap-2">
-            <button name="Submit" type="submit" class="btn btn-primary">Update</button>
+            <button name="Submit" type="submit" class="btn btn-secondary">Update</button>
         </div>
 
     </div>

@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -53,7 +54,7 @@
             </tbody>
         </table>
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary btn-lg"
+            <button type="button" class="btn btn-secondary btn-lg"
                     onclick="window.location.href='/CRM_war/CRM_war/login';">
                 Back to login
             </button>

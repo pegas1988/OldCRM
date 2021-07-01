@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -18,11 +19,12 @@
 <center> -->
 <form method="post">
     <div class="container mb-3 mt-3 w-50 p-3">
+        <div class="p-3 mb-2 bg-secondary text-white">
             <center>
                 <h1>Add a new User!</h1>
-                <p class="text-primary">Please fill in this form to create a new User</p>
+                <p class="text-white-50">Please fill in this form to create a new User</p>
             </center>
-
+        </div>
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">First Name</label>
             <input type="text" class="form-control" id="exampleInputName" placeholder="Enter FirstName" name="firstName"
@@ -65,15 +67,15 @@
         </div>
 
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-danger">Cancel</button>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-outline-secondary">Create</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='/CRM_war/list';">
+                See list of users
+            </button>
         </div>
 
     </div>
 </form>
-<button onclick="window.location.href='/CRM_war/list';">
-    See list of users
-</button>
 <!-- </center> -->
 </body>
 </html>

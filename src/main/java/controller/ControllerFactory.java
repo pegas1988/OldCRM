@@ -18,8 +18,8 @@ public class ControllerFactory {
         controllerMap.put("GET/updateProceed", new ShowPageController("updateProceed"));
         controllerMap.put("POST/updateProceed", new UpdateProceedController());
         controllerMap.put("GET/userUpdated", new ShowPageController("userUpdated"));
-        controllerMap.put("GET/userDelete", new ShowPageController("userDelete"));
-        controllerMap.put("POST/userDelete", new DeleteUserController());
+        //controllerMap.put("GET/userdelete", new ShowPageController("userdelete"));
+        //controllerMap.put("POST/userdelete", new DeleteUserController());
     }
 
     public Controller getController(HttpServletRequest request) {

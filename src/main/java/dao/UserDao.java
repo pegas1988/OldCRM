@@ -16,7 +16,7 @@ public class UserDao {
     private static final String DELETE_FROM_USER = "delete from \"user\" where first_name = ? and last_name = ?";
     private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update \"user\" set password = ? where first_name = ? and last_name = ? and password = ?";
     private static final String FIND_USER_BY_EMAIL = "select * from \"user\" where email =?";
-    private static final String UPDATE_USER = "insert into \"user\" (first_name, last_name, password, user_role) VALUES (?, ?, ?, ?) WHERE email = ?";
+    private static final String UPDATE_USER = "update \"user\" set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
 
     public void create(User user) {
         try (Connection connection = PostgresUtil.getConnetion();
@@ -92,6 +92,7 @@ public class UserDao {
                 user.setPassword(resultSet.getString("password"));
                 user.setUserID(resultSet.getInt("user_id"));
                 user.setUserRole(roles.valueOf(resultSet.getString("user_role")));
+                user.setEmail(resultSet.getString("email"));
                 users.add(user);
             }
         } catch (SQLException | ClassNotFoundException e) {
@@ -114,6 +115,7 @@ public class UserDao {
                     userToFind.setPassword(resultSet.getString("password"));
                     userToFind.setUserID(resultSet.getInt("user_id"));
                     userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
+                    userToFind.setEmail(userFind.getEmail());
                 }
             }
         } catch (SQLException | ClassNotFoundException e) {

@@ -1,6 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <style>
+        body {
+            background-image: url("icons/back.jpg");
+            background-color: #3b99cc;
+        }
+    </style>
     <title>LoginPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -8,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <form method="post">
     <div class="container mb-3 mt-3 w-50 p-3" style="background-color: #fff;">
         <center>
@@ -32,8 +39,8 @@
             <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
         </div>
         <div class="d-grid gap-2">
-            <button name="Submit" value="Login" type="Submit" class="btn btn-primary">Login</button>
-            <button class="btn btn-success" onclick="window.location.href='/CRM_war/add';">
+            <button name="Submit" value="Login" type="Submit" class="btn btn-secondary">Login</button>
+            <button class="btn btn-outline-secondary" onclick="window.location.href='/CRM_war/add';">
                 Create new user
             </button>
         </div>

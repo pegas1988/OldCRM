@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -30,7 +31,7 @@
             <div id="emailHelp" class="form-text">We will find the user by email</div>
         </div>
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Proceed</button>
+            <button type="submit" class="btn btn-secondary">Proceed</button>
         </div>
 
     </div>

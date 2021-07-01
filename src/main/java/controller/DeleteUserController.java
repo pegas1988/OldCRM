@@ -14,6 +14,6 @@ public class DeleteUserController implements Controller {
         String lastName = req.getParameter("lastName");
         User user = new User(firstName,lastName);
         userService.deleteFromUser(user);
-        return new ControllerResultDto("userDeleted");
+        return new ControllerResultDto("userdelete", true);
     }
 }

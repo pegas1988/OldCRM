@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<%@include file="patterns/navbar.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
@@ -24,8 +25,8 @@
         crossorigin="anonymous"></script>
 
 <form method="post">
+    <center>
     <div class="container m-3">
-        <center>
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -50,9 +51,7 @@
                     <td><c:out value="${name.email}"/></td>
                     <td>
                         <div class="d-grid gap-2">
-                            <input type="hidden" id="firstName" name="firstName" value=${name.firstName}/>
-                            <input type="hidden" id="lastName" name="lastName" value=${name.lastName}/>
-                            <button name="Submit" value="wtf" type="Submit" class="btn btn-primary">
+                            <button name="Submit" type="Submit" class="btn btn-secondary">
                                 Delete
                             </button>
                         </div>
@@ -63,8 +62,8 @@
 
                 </tbody>
             </table>
-        </center>
     </div>
+    </center>
 </form>
 </body>
 </html>

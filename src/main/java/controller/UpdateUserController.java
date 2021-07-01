@@ -16,9 +16,7 @@ public class UpdateUserController implements Controller {
         String email = req.getParameter("email");
         User userFind = new User(email);
         User user = userService.findByEmail(userFind);
-        req.setAttribute("user", user);
-        return new ControllerResultDto("updateProceed");
+        req.getSession().setAttribute("user", user);
+        return new ControllerResultDto("updateProceed", true);
     }
 }
-
-//Git, will u see the difference?
