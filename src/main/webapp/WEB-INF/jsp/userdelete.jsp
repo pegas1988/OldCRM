@@ -26,7 +26,7 @@
 
 <form method="post">
     <center>
-    <div class="container m-3">
+        <div class="container m-3">
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -50,11 +50,15 @@
                     <td><c:out value="${name.userRole}"/></td>
                     <td><c:out value="${name.email}"/></td>
                     <td>
-                        <div class="d-grid gap-2">
-                            <button name="Submit" type="Submit" class="btn btn-secondary">
-                                Delete
-                            </button>
-                        </div>
+                        <form method="post">
+                            <div class="d-grid gap-2">
+                                <input type="hidden" name="firstName" value="${name.firstName}">
+                                <input type="hidden" name="lastName" value="${name.lastName}">
+                                <button name="Submit" type="Submit" class="btn btn-secondary">
+                                    Delete
+                                </button>
+                            </div>
+                        </form>
                     </td>
                 </tr>
                 </c:forEach>
@@ -62,7 +66,7 @@
 
                 </tbody>
             </table>
-    </div>
+        </div>
     </center>
 </form>
 </body>

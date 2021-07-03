@@ -32,6 +32,7 @@ public class DeleteUserServlet extends HttpServlet {
 
         User user = new User(name, lastName);
         userService.deleteFromUser(user);
-        req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp").forward(req, resp);
+        resp.sendRedirect("userdelete");
+        //req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp").forward(req, resp);
     }
 }
