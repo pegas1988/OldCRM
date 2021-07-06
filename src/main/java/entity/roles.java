@@ -4,7 +4,7 @@ package entity;
 public enum roles {
     DIAGNOST,
     DESIGNER,
-    RECEPTIONGIRL,
+    ADMINISTRATOR,
     DOCTOR,
     DCMANAGER,
     CTO,

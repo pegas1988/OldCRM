@@ -24,6 +24,10 @@ public class MaterialService {
         return materialDao.findByType(type);
     }
 
+    public void updateMaterial(Material material, int id) {
+        materialDao.updateMaterial(material, id);
+    }
+
     public int getMaterialIDByName(Material material) {
         return materialDao.materialID(material);
     }

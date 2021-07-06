@@ -10,6 +10,9 @@ public class ControllerFactory {
 
     private void init() {
         controllerMap.put("GET/profile", new ShowPageController("profile"));
+        controllerMap.put("GET/administrator", new ShowPageController("administrator"));
+        controllerMap.put("GET/admin", new ShowPageController("admin"));
+        controllerMap.put("GET/contact", new ShowPageController("contact"));
         controllerMap.put("GET/login", new ShowPageController("login"));
         controllerMap.put("GET/list", new ShowPageController("list"));
         controllerMap.put("GET/updateUser", new ShowPageController("updateUser"));
@@ -18,8 +21,25 @@ public class ControllerFactory {
         controllerMap.put("GET/updateProceed", new ShowPageController("updateProceed"));
         controllerMap.put("POST/updateProceed", new UpdateProceedController());
         controllerMap.put("GET/userUpdated", new ShowPageController("userUpdated"));
-        //controllerMap.put("GET/userdelete", new ShowPageController("userdelete"));
-        //controllerMap.put("POST/userdelete", new DeleteUserController());
+        controllerMap.put("GET/createMaterial", new ShowPageController("createMaterial"));
+        controllerMap.put("GET/materialCreated", new ShowPageController("materialCreated"));
+        controllerMap.put("POST/materialCreated", new MaterialCreatedController());
+        controllerMap.put("POST/createMaterial", new CreateMaterialController());
+        controllerMap.put("GET/updateMaterial", new ShowPageController("updateMaterial"));
+        controllerMap.put("POST/updateMaterial", new UpdateMaterialController());
+        controllerMap.put("POST/updateMaterialProceed", new UpdateMaterialProceedController());
+        controllerMap.put("GET/deleteMaterial", new ShowDeleteMaterialController("deleteMaterial"));
+        controllerMap.put("POST/deleteMaterial", new DeleteMaterialController());
+        controllerMap.put("GET/materialUpdated", new ShowPageController("materialUpdated"));
+        controllerMap.put("GET/updateMaterialProceed", new ShowPageController("updateMaterialProceed"));
+        controllerMap.put("GET/seeAllMaterials", new ShowSeeAllMaterialsController("seeAllMaterials"));
+        controllerMap.put("GET/materialToUpdate", new ShowSeeAllMaterialsController("materialToUpdate"));
+        controllerMap.put("GET/productAdd", new ShowPageController("productAdd"));
+        controllerMap.put("GET/createClient", new ShowPageController("createClient"));
+        controllerMap.put("POST/materialToUpdate", new MaterialToUpdateController());
+        controllerMap.put("POST/createClient", new ClientCreateController());
+        controllerMap.put("GET/clientCreated", new ShowPageController("clientCreated"));
+
     }
 
     public Controller getController(HttpServletRequest request) {

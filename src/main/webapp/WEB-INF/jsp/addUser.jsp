@@ -58,6 +58,7 @@
             <option value="MASTER">The Master</option>
             <option value="DESIGNER">The Designer</option>
             <option value="ADMIN">The GOD</option>
+            <option value="ADMINISTRATOR">Administrator</option>
         </select>
 
 

@@ -11,7 +11,7 @@ public class ClientDao {
 
     private static final String SELECT_FROM_CLIENT = "select * from client";
     private static final String SELECT_FROM_CLIENT_WHERE_FIRST_NAME_AND_LAST_NAME = "select * from client where first_name = ? and last_name = ?";
-    private static final String INSERT_INTO_CLIENT = "insert into client (first_name, last_name, date_of_birth, sex, diagnoses) values (?,?,?,?,?)";
+    private static final String INSERT_INTO_CLIENT = "insert into client (first_name, last_name, sex) values (?,?,?)";
     private static final String DELETE_FROM_CLIENT = "delete from client where last_name = ?";
     //private static final String UPDATE_CLIENTS_Di_BY_NAME = "update client set last_name = 'changed' where first_name = ?";
 
@@ -21,9 +21,9 @@ public class ClientDao {
         ) {
             preparedStatement.setString(1, client.getFirstName());
             preparedStatement.setString(2, client.getLastName());
-            preparedStatement.setDate(3, (Date) client.getDateOfBirth());
-            preparedStatement.setString(4, client.getSex());
-            preparedStatement.setString(5, client.getDiagnoses());
+            //preparedStatement.setDate(3, (Date) client.getDateOfBirth());
+            preparedStatement.setString(3, client.getSex());
+            //preparedStatement.setString(5, client.getDiagnoses());
             preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
