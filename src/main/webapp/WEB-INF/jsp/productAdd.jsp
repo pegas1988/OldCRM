@@ -29,58 +29,10 @@
             <input type="text" class="form-control" id="exampleInputName" placeholder="Enter name" name="productName"
                    required>
         </div>
-        <SCRIPT language="javascript">
-            function addRow(tableID) {
-
-                var table = document.getElementById(tableID);
-
-                var rowCount = table.rows.length;
-                var row = table.insertRow(rowCount);
-
-                var cell1 = row.insertCell(0);
-                var element1 = document.createElement("input");
-                element1.type = "checkbox";
-                element1.name = "chkbox[]";
-                cell1.appendChild(element1);
-
-                var cell2 = row.insertCell(1);
-                cell2.innerHTML = rowCount + 1;
-
-                var cell3 = row.insertCell(2);
-                var element2 = document.createElement("input");
-                element2.type = "text";
-                var length = (table.rows.length) - 1;
-                element2.name = "operationParameterses[" + length + "].name";
-                cell3.appendChild(element2);
-
-            }
-
-        </SCRIPT>
-        <form:form commandName="user" action="lazyRowAdd.web" method="post">
-
-            <fieldset>
-                <legend>User details</legend>
-                <ol>
-                    <li>
-                        <INPUT type="button" value="Add Row" onclick="addRow('dataTable')"/>
-                        <TABLE id="dataTable" width="350px" border="1">
-                            <TR>
-                                <TD><INPUT type='text' name="operationParameterses[0].name"/></TD>
-                            </TR>
-                        </TABLE>
-                    </li>
-
-                </ol>
-                <ol>
-                    <c:forEach items="${user.operationParameterses}" var="value">
-                        <li><c:out value="${value.name}"/></li>
-                    </c:forEach>
-                </ol>
-            </fieldset>
-        </form:form>
         <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-outline-secondary">Add material</button>
-            <button type="button" class="btn btn-secondary" onclick="window.location.href='/CRM_war/seeAllMaterials';">
+            <button type="submit" class="btn btn-outline-secondary">Add new Product name</button>
+            <button type="button" class="btn btn-secondary"
+                    onclick="window.location.href='/CRM_war/CRM_war/listOfProducts';">
                 See list of materials
             </button>
         </div>

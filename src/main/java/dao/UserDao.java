@@ -16,17 +16,22 @@ public class UserDao {
     private static final String DELETE_FROM_USER = "delete from \"user\" where first_name = ? and last_name = ?";
     private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update \"user\" set password = ? where first_name = ? and last_name = ? and password = ?";
     private static final String FIND_USER_BY_EMAIL = "select * from \"user\" where email =?";
+    private static final String FIND_USER_BY_ID = "select * from \"user\" where user_id =?";
     private static final String UPDATE_USER = "update \"user\" set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
 
     public void create(User user) {
         try (Connection connection = PostgresUtil.getConnetion();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.setString(4, user.getUserRole().toString());
             preparedStatement.setString(5, user.getEmail());
             preparedStatement.execute();
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                user.setUserID(generatedKeys.getInt(1));
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -116,6 +121,27 @@ public class UserDao {
                     userToFind.setUserID(resultSet.getInt("user_id"));
                     userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
                     userToFind.setEmail(userFind.getEmail());
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return userToFind;
+    }
+
+    public User findById(int id) {
+        User userToFind = new User();
+        try (Connection connection = PostgresUtil.getConnetion();
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_ID)) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            {
+                while (resultSet.next()) {
+                    userToFind.setFirstName(resultSet.getString("first_name"));
+                    userToFind.setLastName(resultSet.getString("last_name"));
+                    userToFind.setPassword(resultSet.getString("password"));
+                    userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
+                    userToFind.setEmail(resultSet.getString("email"));
                 }
             }
         } catch (SQLException | ClassNotFoundException e) {

@@ -2,6 +2,7 @@ package service;
 
 import dao.OrderDao;
 import entity.Order;
+import entity.Product;
 
 import java.sql.Date;
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
 public class OrderService {
     OrderDao orderDao = new OrderDao();
 
-    public void createOrder(Order order) {
-        orderDao.create(order);
+    public void createOrder(Order order, List<String> products) {
+        orderDao.create(order, products);
     }
 
     public void deleteOrder(Order order) {

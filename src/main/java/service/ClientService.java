@@ -24,9 +24,14 @@ public class ClientService {
         return byName;
     }
 
+    public Client findById(int id) {
+        return clientDao.findById(id);
+    }
+
     public void create(Client client) {
         clientDao.create(client);
     }
+
     public void delete(Client client) {
         clientDao.delete(client);
     }

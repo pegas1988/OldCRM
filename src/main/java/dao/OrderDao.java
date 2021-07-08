@@ -1,5 +1,6 @@
 package dao;
 
+import entity.Product;
 import utility.PostgresUtil;
 import entity.Order;
 
@@ -12,23 +13,31 @@ public class OrderDao {
     private static final String FIND_BY_CREATING_DATE = "select * from order where creating_date = ?";
     private static final String FIND_BY_PRODUCT = "select * from order where product = ?";
     private static final String FIND_BY_ID = "select * from order where order_id = ?";
-    private static final String CREATE_ORDER = "insert into order (order_id, creating_date, total_price, lyfe_cycle) values (?,?,?,?)";
-    private static final String DELETE = "update order set life_cycle = ?";
+    private static final String CREATE_ORDER = "insert into \"order\" (client_fio, comment, order_stage, responsible_person) values (?,?,?,?)";
+    private static final String DELETE = "update order set client_fio = ?";
+    private static final String ORDER_PRODUCT = "insert into order_product (order_id, product_name) values (?,?)";
     //DELETE will work as i marker in line with other parameters (was deleted / alive)
 
-    public void create(Order order) {
+    public void create(Order order, List<String> products) {
         try (Connection connection = PostgresUtil.getConnetion();
-             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER);
-             //PreparedStatement preparedStatementForProducts = connection.prepareStatement()
+             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER, Statement.RETURN_GENERATED_KEYS);
+             PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT);
         ) {
-            preparedStatement.setInt(1, order.getOrderID());
-            preparedStatement.setDate(2, (Date) order.getDateCreating());
-            preparedStatement.setInt(3, order.getTotalPrice());
-            preparedStatement.setString(4, order.getLifeCycle());
-            for (int e = 0; e < order.getProduct().size(); e ++){
-
+            //preparedStatement.setDate(1, Date.valueOf(order.getDateCreating().toString()));
+            preparedStatement.setString(1, order.getClient().getFirstName());
+            preparedStatement.setString(2, order.getComments());
+            preparedStatement.setString(3, order.getStage());
+            preparedStatement.setString(4, order.getResponsibleUser());
+            preparedStatement.execute();
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            while (generatedKeys.next()) {
+                order.setOrderID(generatedKeys.getInt("order_id"));
             }
-            preparedStatement.executeUpdate();
+            for (int i = 0; i < products.size(); i++) {
+                preparedStatementForProducts.setInt(1, order.getOrderID());
+                preparedStatementForProducts.setString(2, products.get(i));
+                preparedStatementForProducts.executeUpdate();
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

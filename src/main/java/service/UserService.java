@@ -9,16 +9,20 @@ import java.util.List;
 public class UserService {
     UserDao userDao = new UserDao();
 
-    public void updateUser(User user)
-    {
+    public void updateUser(User user) {
         userDao.updateUser(user);
     }
+
     public void create(User user) {
         userDao.create(user);
     }
 
-    public User findByEmail(User user){
+    public User findByEmail(User user) {
         return userDao.findByEmail(user);
+    }
+
+    public User findById(int id) {
+        return userDao.findById(id);
     }
 
     public void updateUserPasswordByName(User user, String newPassword) {

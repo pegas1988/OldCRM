@@ -47,9 +47,12 @@
                     <h5 class="card-title">Materials</h5>
                     <a href="/CRM_war/CRM_war/createMaterial" style="width: 6rem;"
                        class="btn btn-secondary m-1">Create</a>
-                    <a href="/CRM_war/CRM_war/updateMaterial" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
-                    <a href="/CRM_war/CRM_war/deleteMaterial" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRM_war/CRM_war/seeAllMaterials" style="width: 6rem;" class="btn btn-secondary m-1">See all</a>
+                    <a href="/CRM_war/CRM_war/updateMaterial" style="width: 6rem;"
+                       class="btn btn-secondary m-1">Update</a>
+                    <a href="/CRM_war/CRM_war/deleteMaterial" style="width: 6rem;"
+                       class="btn btn-secondary m-1">Delete</a>
+                    <a href="/CRM_war/CRM_war/seeAllMaterials" style="width: 6rem;" class="btn btn-secondary m-1">See
+                        all</a>
                 </div>
             </div>
         </div>
@@ -66,7 +69,8 @@
                     <a href="/CRM_war/CRM_war/productAdd" style="width: 6rem;" class="btn btn-secondary m-1">Create</a>
                     <a href="/CRM_war/updateProduct" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
                     <a href="/CRM_war/deleteProduct" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRM_war/findAllProducts" style="width: 6rem;" class="btn btn-secondary m-1">See all</a>
+                    <a href="/CRM_war/CRM_war/listOfProducts" style="width: 6rem;" class="btn btn-secondary m-1">See
+                        all</a>
                 </div>
             </div>
         </div>

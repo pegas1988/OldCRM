@@ -5,6 +5,11 @@ import java.util.List;
 
 public class Product {
     private Integer Id;
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
     private String productName;
     private int priceOfAllMaterials;
     private List<Material> materialList = new ArrayList<>();

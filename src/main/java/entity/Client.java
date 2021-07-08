@@ -101,4 +101,12 @@ public class Client {
                 ", diagnoses='" + diagnoses + '\'' +
                 '}';
     }
+
+    public Integer getClientID() {
+        return ClientID;
+    }
+
+    public void setClientID(Integer clientID) {
+        ClientID = clientID;
+    }
 }

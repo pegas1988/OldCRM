@@ -34,7 +34,8 @@
                        class="btn btn-secondary m-1">Create</a>
                     <a href="/CRM_war/CRM_war/updateUser" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
                     <a href="/CRM_war/CRM_war/userdelete" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRM_war/list" style="width: 6rem;" class="btn btn-secondary m-1">See all</a>
+                    <a href="/CRM_war/CRM_war/listOfClients" style="width: 6rem;" class="btn btn-secondary m-1">See
+                        all</a>
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@
                 </center>
                 <div class="card-body">
                     <h5 class="card-title">Order</h5>
-                    <a href="/CRM_war/CRM_war/createMaterial" style="width: 6rem;"
+                    <a href="/CRM_war/CRM_war/orderCreate" style="width: 6rem;"
                        class="btn btn-secondary m-1">Create</a>
                     <a href="/CRM_war/CRM_war/updateMaterial" style="width: 6rem;"
                        class="btn btn-secondary m-1">Update</a>

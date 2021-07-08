@@ -30,14 +30,18 @@ public class LoginController implements Controller {
 
             switch (user.getUserRole()) {
                 case DESIGNER:
+                    req.getSession().setAttribute("UserId", user.getUserID());
                     return new ControllerResultDto("designer");
                 case DOCTOR:
+                    req.getSession().setAttribute("UserId", user.getUserID());
                     return new ControllerResultDto("doctor");
                 case ADMIN: {
+                    req.getSession().setAttribute("UserId", user.getUserID());
                     req.getSession().setAttribute("button", createButton(button, "admin"));
                     return new ControllerResultDto("admin");
                 }
                 case ADMINISTRATOR: {
+                    req.getSession().setAttribute("UserId", user.getUserID());
                     req.getSession().setAttribute("button", createButton(button, "administrator"));
                     return new ControllerResultDto("administrator");
                 }
