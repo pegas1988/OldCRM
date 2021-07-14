@@ -1,7 +1,6 @@
 package servlet;
 
 import entity.User;
-import entity.roles;
 import service.UserService;
 
 import javax.servlet.RequestDispatcher;

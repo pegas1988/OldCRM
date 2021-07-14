@@ -2,7 +2,6 @@ package service;
 
 import dao.OrderDao;
 import entity.Order;
-import entity.Product;
 
 import java.sql.Date;
 import java.util.List;

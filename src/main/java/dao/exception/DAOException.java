@@ -7,3 +7,5 @@ public class DAOException extends SQLException {
         System.out.println("DAO Layer exception");
     }
 }
+
+//some code here

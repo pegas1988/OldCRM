@@ -1,12 +1,7 @@
 package service;
 
-import entity.Material;
-import entity.Product;
 import entity.User;
 import entity.roles;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainClass {
     public static void main(String[] args) {

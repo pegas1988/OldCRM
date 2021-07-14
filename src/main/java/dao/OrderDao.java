@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Product;
 import utility.PostgresUtil;
 import entity.Order;
 

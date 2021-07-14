@@ -1,6 +1,5 @@
 package controller;
 
-import entity.User;
 import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
