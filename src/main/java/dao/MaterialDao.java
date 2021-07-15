@@ -2,7 +2,6 @@ package dao;
 
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
 import entity.Material;
 
 import java.sql.*;

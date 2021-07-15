@@ -18,7 +18,7 @@
 <%@include file="patterns/navbar.jsp" %>
 <h1>Client was created!</h1>
 <p>If you wish to add new one, please push button "Create one more client"</p>
-<button class="button btn btn-secondary btn-lg" onclick="window.location.href='/CRM_war/CRM_war/createClient';">
+<button class="button btn btn-secondary btn-lg" onclick="window.location.href='/CRMtoTest_war/CRMtoTest_war/createClient';">
     Create on more client
 </button>
 </body>

@@ -1,13 +1,13 @@
 package service;
 
+
 import dao.MaterialDao;
 import entity.Material;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public class MaterialService {
     MaterialDao materialDao = new MaterialDao();
+
 
     public void createMaterial(Material material) {
         materialDao.createNewMaterial(material);
