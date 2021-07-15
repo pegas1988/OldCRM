@@ -1,5 +1,6 @@
 package dao;
 
+import utility.ConnectionPool;
 import utility.PostgresUtil;
 import entity.User;
 import entity.roles;
@@ -19,8 +20,10 @@ public class UserDao {
     private static final String FIND_USER_BY_ID = "select * from \"user\" where user_id =?";
     private static final String UPDATE_USER = "update \"user\" set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
 
+    ConnectionPool connectionPool;
+
     public void create(User user) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
@@ -32,13 +35,13 @@ public class UserDao {
             if (generatedKeys.next()) {
                 user.setUserID(generatedKeys.getInt(1));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void updateUserPassword(User user, String newPassword) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD)
         ) {
             preparedStatement.setString(1, newPassword);
@@ -46,18 +49,18 @@ public class UserDao {
             preparedStatement.setString(3, user.getLastName());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void deleteFromUser(User user) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_USER)) {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.execute();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -65,7 +68,7 @@ public class UserDao {
     public User selectFromUserByFirstNameAndLastName(User user) {
         User searchedUser = new User();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME)) {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
@@ -78,7 +81,7 @@ public class UserDao {
                 searchedUser.setUserID(resultSet.getInt("user_id"));
                 searchedUser.setEmail(resultSet.getString("email"));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return searchedUser;
@@ -86,7 +89,7 @@ public class UserDao {
 
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(SELECT_FROM_USER)
         ) {
@@ -100,7 +103,7 @@ public class UserDao {
                 user.setEmail(resultSet.getString("email"));
                 users.add(user);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return users;
@@ -109,7 +112,7 @@ public class UserDao {
     public User findByEmail(User userFind) {
         User userToFind = new User();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL)) {
             preparedStatement.setString(1, userFind.getEmail());
             resultSet = preparedStatement.executeQuery();
@@ -123,7 +126,7 @@ public class UserDao {
                     userToFind.setEmail(userFind.getEmail());
                 }
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return userToFind;
@@ -131,7 +134,7 @@ public class UserDao {
 
     public User findById(int id) {
         User userToFind = new User();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_ID)) {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -144,14 +147,14 @@ public class UserDao {
                     userToFind.setEmail(resultSet.getString("email"));
                 }
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return userToFind;
     }
 
     public void updateUser(User user) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER)) {
             preparedStatement.setString(1, user.getFirstName());
             preparedStatement.setString(2, user.getLastName());
@@ -159,7 +162,7 @@ public class UserDao {
             preparedStatement.setString(4, user.getUserRole().toString());
             preparedStatement.setString(5, user.getEmail());
             preparedStatement.execute();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

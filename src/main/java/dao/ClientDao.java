@@ -1,5 +1,6 @@
 package dao;
 
+import utility.ConnectionPool;
 import utility.PostgresUtil;
 import entity.Client;
 
@@ -16,9 +17,11 @@ public class ClientDao {
     private static final String FIND_CLIENT_BY_ID = "select *from client where client_id = ?";
     //private static final String UPDATE_CLIENTS_Di_BY_NAME = "update client set last_name = 'changed' where first_name = ?";
 
+    ConnectionPool connectionPool;
+
     public Client findById(int id) {
         Client client = new Client();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_CLIENT_BY_ID);
         ) {
             preparedStatement.setInt(1, id);
@@ -30,14 +33,14 @@ public class ClientDao {
                 client.setSex(resultSet.getString("sex"));
                 client.setDateOfBirth(resultSet.getTimestamp("date_of_birth"));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return client;
     }
 
     public void create(Client client) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT, Statement.RETURN_GENERATED_KEYS);
         ) {
             preparedStatement.setString(1, client.getFirstName());
@@ -50,7 +53,7 @@ public class ClientDao {
             if (generatedKeys.next()) {
                 client.setClientID(generatedKeys.getInt(1));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -67,19 +70,19 @@ public class ClientDao {
     }*/
 
     public void delete(Client client) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT)
         ) {
             preparedStatement.setString(1, client.getLastName());
             preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public List<Client> findAll() {
         List<Client> clients = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(SELECT_FROM_CLIENT);
         ) {
@@ -92,7 +95,7 @@ public class ClientDao {
                 client.setDateOfBirth(resultSet.getTimestamp("date_of_birth"));
                 clients.add(client);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return clients;
@@ -100,7 +103,7 @@ public class ClientDao {
 
     public List<Client> findByFirstNameAndSecondName(String name, String secondName) {
         List<Client> clients = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CLIENT_WHERE_FIRST_NAME_AND_LAST_NAME);
         ) {
             preparedStatement.setString(1, name);
@@ -115,7 +118,7 @@ public class ClientDao {
                 client.setDateOfBirth(resultSet.getTimestamp("date_of_birth"));
                 clients.add(client);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return clients;

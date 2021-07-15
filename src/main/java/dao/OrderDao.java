@@ -1,5 +1,6 @@
 package dao;
 
+import utility.ConnectionPool;
 import utility.PostgresUtil;
 import entity.Order;
 
@@ -17,8 +18,10 @@ public class OrderDao {
     private static final String ORDER_PRODUCT = "insert into order_product (order_id, product_name) values (?,?)";
     //DELETE will work as i marker in line with other parameters (was deleted / alive)
 
+    ConnectionPool connectionPool;
+
     public void create(Order order, List<String> products) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER, Statement.RETURN_GENERATED_KEYS);
              PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT);
         ) {
@@ -37,25 +40,25 @@ public class OrderDao {
                 preparedStatementForProducts.setString(2, products.get(i));
                 preparedStatementForProducts.executeUpdate();
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void delete(Order order) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
         ) {
             preparedStatement.setString(1, order.getLifeCycle());
             preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public List<Order> findAll() {
         List<Order> orders = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(SELECT_ALL);
         ) {
@@ -69,7 +72,7 @@ public class OrderDao {
                 order.setResponsibleUser(resultSet.getString("responsible_person"));
                 orders.add(order);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return orders;
@@ -78,7 +81,7 @@ public class OrderDao {
     public Order findById(Integer id) {
         Order order = new Order();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_ID)) {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
@@ -90,7 +93,7 @@ public class OrderDao {
                 order.setDateCreating(resultSet.getTimestamp("creating_date"));
                 order.setResponsibleUser(resultSet.getString("responsible_person"));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return order;
@@ -99,11 +102,11 @@ public class OrderDao {
     public List<Order> findByProduct(String product) {
         List<Order> orders = new ArrayList<>();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_PRODUCT)) {
             preparedStatement.setString(1, product);
             ordersCreating(orders, preparedStatement);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return orders;
@@ -112,11 +115,11 @@ public class OrderDao {
     public List<Order> findByCreatingDate(Date date) {
         List<Order> orders = new ArrayList<>();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_CREATING_DATE)) {
             preparedStatement.setDate(1, date);
             ordersCreating(orders, preparedStatement);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return orders;

@@ -1,5 +1,6 @@
 package dao;
 
+import utility.ConnectionPool;
 import utility.PostgresUtil;
 import entity.DailyReport;
 
@@ -13,9 +14,11 @@ public class DailyReportDao {
     private static final String CREATE_REPORT = "insert into daily_report (date_of_report, responsible_person) values (?,?)";
     //private static final String SELECT_BY_PRODUCT = "";
 
+    ConnectionPool connectionPool;
+
     public List<DailyReport> findAll() {
         List<DailyReport> dailyReports = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(SELECT_ALL);
         ) {
@@ -25,7 +28,7 @@ public class DailyReportDao {
                 report.setResponsiblePerson(resultSet.getString("responsible_person"));
                 dailyReports.add(report);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return dailyReports;
@@ -34,7 +37,7 @@ public class DailyReportDao {
     public List<DailyReport> findByCreatingDate(Date date) {
         List<DailyReport> dailyReports = new ArrayList<>();
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BY_DATE)) {
             preparedStatement.setDate(1, date);
             resultSet = preparedStatement.executeQuery();
@@ -45,20 +48,20 @@ public class DailyReportDao {
                 dailyReports.add(report);
             }
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return dailyReports;
     }
 
     public void createReport(DailyReport report) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_REPORT);
         ) {
             preparedStatement.setString(2, report.getResponsiblePerson());
             preparedStatement.setDate(1, (Date) report.getDate());
             preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

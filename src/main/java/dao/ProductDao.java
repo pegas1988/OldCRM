@@ -1,5 +1,6 @@
 package dao;
 
+import utility.ConnectionPool;
 import utility.PostgresUtil;
 import entity.Product;
 
@@ -14,9 +15,11 @@ public class ProductDao {
     private static final String GET_PRODUCT_ID_BY_NAME = "select product_id from product where product_name = ?";
     private static final String INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES = "insert into product_material (product_id, material_id) values (?, ?)";
 
+    ConnectionPool connectionPool;
+
     public List<Product> findAll() {
         List<Product> products = new ArrayList<>();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(SELECT_FROM_PRODUCT)
         ) {
@@ -28,7 +31,7 @@ public class ProductDao {
                 product.setId(resultSet.getInt("product_id"));
                 products.add(product);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return products;
@@ -37,14 +40,14 @@ public class ProductDao {
     public int productID(Product product) {
         int productID = 0;
         ResultSet resultSet = null;
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT_ID_BY_NAME)) {
             preparedStatement.setString(1, product.getProductName());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 productID = resultSet.getInt("product_id");
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return productID;
@@ -53,7 +56,7 @@ public class ProductDao {
 
     public void create(Product product) {
         MaterialDao materialDao = new MaterialDao();
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              //PreparedStatement preparedStatementProductID = connection.prepareStatement(INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES);
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_PRODUCT)) {
             //preparedStatement.setInt(1, product.getPriceOfAllMaterials());
@@ -65,17 +68,17 @@ public class ProductDao {
                 preparedStatementProductID.setInt(2, materialDao.materialID(product.getMaterialList().get(e)));
                 preparedStatementProductID.execute();
             }*/
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void deleteFromProduct(Product product) {
-        try (Connection connection = PostgresUtil.getConnetion();
+        try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_PRODUCT)) {
             preparedStatement.setString(1, product.getProductName());
             preparedStatement.execute();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
