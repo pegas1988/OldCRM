@@ -46,6 +46,8 @@ public class ControllerFactory {
         controllerMap.put("GET/listOfProducts", new ListOfProductsController("listOfProducts"));
         controllerMap.put("GET/orderCreate", new ShowCreateOrderController("orderCreate"));
         controllerMap.put("POST/orderCreate", new OrderCreateController());
+        controllerMap.put("GET/weather", new ShowPageController("weather"));
+        controllerMap.put("POST/weather", new WeatherController());
     }
 
     public Controller getController(HttpServletRequest request) {

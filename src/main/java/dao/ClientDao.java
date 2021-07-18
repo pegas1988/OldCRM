@@ -1,6 +1,7 @@
 package dao;
 
 import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 import utility.PostgresUtil;
 import entity.Client;
 
@@ -20,6 +21,7 @@ public class ClientDao {
     ConnectionPool connectionPool;
 
     public Client findById(int id) {
+        connectionPool = ContextForConnectionPool.get();
         Client client = new Client();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_CLIENT_BY_ID);
@@ -39,15 +41,13 @@ public class ClientDao {
         return client;
     }
 
-    public void create(Client client) {
-        try (Connection connection = connectionPool.get();
+    public void create(Client client, Connection connection) {
+        try (
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT, Statement.RETURN_GENERATED_KEYS);
         ) {
             preparedStatement.setString(1, client.getFirstName());
             preparedStatement.setString(2, client.getLastName());
-            //preparedStatement.setDate(3, (Date) client.getDateOfBirth());
             preparedStatement.setString(3, client.getSex());
-            //preparedStatement.setString(5, client.getDiagnoses());
             preparedStatement.executeUpdate();
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
@@ -58,18 +58,8 @@ public class ClientDao {
         }
     }
 
-    /*public void updateDiagnose(Client client) {
-        try (Connection connection = PostgresUtil.getConnetion();
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CLIENT_BY_NAME);
-        ) {
-            preparedStatement.setString(1, client.getFirstName());
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }*/
-
     public void delete(Client client) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_CLIENT)
         ) {
@@ -81,6 +71,7 @@ public class ClientDao {
     }
 
     public List<Client> findAll() {
+        connectionPool = ContextForConnectionPool.get();
         List<Client> clients = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
@@ -102,6 +93,7 @@ public class ClientDao {
     }
 
     public List<Client> findByFirstNameAndSecondName(String name, String secondName) {
+        connectionPool = ContextForConnectionPool.get();
         List<Client> clients = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_CLIENT_WHERE_FIRST_NAME_AND_LAST_NAME);

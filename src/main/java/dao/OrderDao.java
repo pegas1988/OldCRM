@@ -1,6 +1,7 @@
 package dao;
 
 import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 import utility.PostgresUtil;
 import entity.Order;
 
@@ -21,6 +22,7 @@ public class OrderDao {
     ConnectionPool connectionPool;
 
     public void create(Order order, List<String> products) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER, Statement.RETURN_GENERATED_KEYS);
              PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT);
@@ -46,6 +48,7 @@ public class OrderDao {
     }
 
     public void delete(Order order) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
         ) {
@@ -57,6 +60,7 @@ public class OrderDao {
     }
 
     public List<Order> findAll() {
+        connectionPool = ContextForConnectionPool.get();
         List<Order> orders = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
@@ -79,6 +83,7 @@ public class OrderDao {
     }
 
     public Order findById(Integer id) {
+        connectionPool = ContextForConnectionPool.get();
         Order order = new Order();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -100,6 +105,7 @@ public class OrderDao {
     }
 
     public List<Order> findByProduct(String product) {
+        connectionPool = ContextForConnectionPool.get();
         List<Order> orders = new ArrayList<>();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -113,6 +119,7 @@ public class OrderDao {
     }
 
     public List<Order> findByCreatingDate(Date date) {
+        connectionPool = ContextForConnectionPool.get();
         List<Order> orders = new ArrayList<>();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();

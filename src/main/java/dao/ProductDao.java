@@ -1,6 +1,7 @@
 package dao;
 
 import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 import utility.PostgresUtil;
 import entity.Product;
 
@@ -18,6 +19,7 @@ public class ProductDao {
     ConnectionPool connectionPool;
 
     public List<Product> findAll() {
+        connectionPool = ContextForConnectionPool.get();
         List<Product> products = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
@@ -38,6 +40,7 @@ public class ProductDao {
     }
 
     public int productID(Product product) {
+        connectionPool = ContextForConnectionPool.get();
         int productID = 0;
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -55,6 +58,7 @@ public class ProductDao {
 
 
     public void create(Product product) {
+        connectionPool = ContextForConnectionPool.get();
         MaterialDao materialDao = new MaterialDao();
         try (Connection connection = connectionPool.get();
              //PreparedStatement preparedStatementProductID = connection.prepareStatement(INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES);
@@ -74,6 +78,7 @@ public class ProductDao {
     }
 
     public void deleteFromProduct(Product product) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_PRODUCT)) {
             preparedStatement.setString(1, product.getProductName());

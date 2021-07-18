@@ -6,6 +6,7 @@ import service.ClientService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ClientCreateController implements Controller {
     ClientService clientService = new ClientService();
@@ -18,7 +19,11 @@ public class ClientCreateController implements Controller {
         client.setFirstName(clientName);
         client.setLastName(clientLastName);
         client.setSex(gender);
-        clientService.create(client);
+        try {
+            clientService.create(client);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
         return new ControllerResultDto("clientCreated", true);
     }
 }

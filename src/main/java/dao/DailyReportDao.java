@@ -1,6 +1,7 @@
 package dao;
 
 import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 import utility.PostgresUtil;
 import entity.DailyReport;
 
@@ -17,6 +18,7 @@ public class DailyReportDao {
     ConnectionPool connectionPool;
 
     public List<DailyReport> findAll() {
+        connectionPool = ContextForConnectionPool.get();
         List<DailyReport> dailyReports = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
@@ -35,6 +37,7 @@ public class DailyReportDao {
     }
 
     public List<DailyReport> findByCreatingDate(Date date) {
+        connectionPool = ContextForConnectionPool.get();
         List<DailyReport> dailyReports = new ArrayList<>();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -55,6 +58,7 @@ public class DailyReportDao {
     }
 
     public void createReport(DailyReport report) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_REPORT);
         ) {

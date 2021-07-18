@@ -30,11 +30,11 @@
                 </center>
                 <div class="card-body">
                     <h5 class="card-title">Client</h5>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/createClient" style="width: 6rem;"
+                    <a href="/CRM_war/CRM_war/createClient" style="width: 6rem;"
                        class="btn btn-secondary m-1">Create</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/updateUser" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/userdelete" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/listOfClients" style="width: 6rem;" class="btn btn-secondary m-1">See
+                    <a href="/CRM_war/CRM_war/updateUser" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
+                    <a href="/CRM_war/CRM_war/userdelete" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
+                    <a href="/CRM_war/CRM_war/listOfClients" style="width: 6rem;" class="btn btn-secondary m-1">See
                         all</a>
                 </div>
             </div>
@@ -49,13 +49,13 @@
                 </center>
                 <div class="card-body">
                     <h5 class="card-title">Order</h5>
-                    <a href="/CRMtoTest_war/CRMtoTest_warr/orderCreate" style="width: 6rem;"
+                    <a href="/CRM_war/CRM_war/orderCreate" style="width: 6rem;"
                        class="btn btn-secondary m-1">Create</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_warr/updateMaterial" style="width: 6rem;"
+                    <a href="/CRM_war/CRM_war/updateMaterial" style="width: 6rem;"
                        class="btn btn-secondary m-1">Update</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/deleteMaterial" style="width: 6rem;"
+                    <a href="/CRM_war/CRM_war/deleteMaterial" style="width: 6rem;"
                        class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRMtoTest_war/CRMtoTest_war/seeAllMaterials" style="width: 6rem;" class="btn btn-secondary m-1">See
+                    <a href="/CRM_war/CRM_war/seeAllMaterials" style="width: 6rem;" class="btn btn-secondary m-1">See
                         all</a>
                 </div>
             </div>

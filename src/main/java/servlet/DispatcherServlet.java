@@ -12,7 +12,7 @@ import controller.ControllerResultDto;
 import controller.Controller;
 import controller.ControllerFactory;
 
-@WebServlet("/CRMtoTest_war/*")
+@WebServlet("/CRM_war/*")
 public class DispatcherServlet extends HttpServlet {
 
     private ControllerFactory controllerFactory;

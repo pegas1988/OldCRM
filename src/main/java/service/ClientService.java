@@ -2,7 +2,11 @@ package service;
 
 import dao.ClientDao;
 import entity.Client;
+import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,8 +32,24 @@ public class ClientService {
         return clientDao.findById(id);
     }
 
-    public void create(Client client) {
-        clientDao.create(client);
+    public void create(Client client) throws SQLException {
+        ConnectionPool connectionPool = ContextForConnectionPool.get();
+        Connection connection = connectionPool.get();
+        try {
+            connection.setAutoCommit(false);
+            clientDao.create(client, connection);
+            connection.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException i) {
+                i.printStackTrace();
+            } finally {
+                connection.setAutoCommit(true);
+                connection.close();
+            }
+        }
     }
 
     public void delete(Client client) {

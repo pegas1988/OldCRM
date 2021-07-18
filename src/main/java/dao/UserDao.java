@@ -1,6 +1,7 @@
 package dao;
 
 import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 import utility.PostgresUtil;
 import entity.User;
 import entity.roles;
@@ -23,6 +24,7 @@ public class UserDao {
     ConnectionPool connectionPool;
 
     public void create(User user) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, user.getFirstName());
@@ -41,6 +43,7 @@ public class UserDao {
     }
 
     public void updateUserPassword(User user, String newPassword) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD)
         ) {
@@ -55,6 +58,7 @@ public class UserDao {
     }
 
     public void deleteFromUser(User user) {
+        connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_FROM_USER)) {
             preparedStatement.setString(1, user.getFirstName());
@@ -66,6 +70,7 @@ public class UserDao {
     }
 
     public User selectFromUserByFirstNameAndLastName(User user) {
+        connectionPool = ContextForConnectionPool.get();
         User searchedUser = new User();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -88,6 +93,7 @@ public class UserDao {
     }
 
     public List<User> findAll() {
+        connectionPool = ContextForConnectionPool.get();
         List<User> users = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
@@ -110,6 +116,7 @@ public class UserDao {
     }
 
     public User findByEmail(User userFind) {
+        connectionPool = ContextForConnectionPool.get();
         User userToFind = new User();
         ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
@@ -133,6 +140,7 @@ public class UserDao {
     }
 
     public User findById(int id) {
+        connectionPool = ContextForConnectionPool.get();
         User userToFind = new User();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_ID)) {
