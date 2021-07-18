@@ -7,35 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/WeatherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/WeatherAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/weatherEntity/Coord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/weatherEntity/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/weatherEntity/TestEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/weatherEntity/Weather.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/weatherEntity/Wind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/WeatherMainClassAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/weather.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/weatherToShow.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/some.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CRMtoTest_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CRM_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CRMtoTest_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClientCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClientCreateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DailyReportDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DailyReportDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/administrator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/administrator.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/patterns/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/patterns/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/WeatherController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -430,7 +403,7 @@
       <workItem from="1626464775321" duration="4219000" />
       <workItem from="1626557817432" duration="7899000" />
       <workItem from="1626601634887" duration="28000" />
-      <workItem from="1626603549996" duration="16533000" />
+      <workItem from="1626603549996" duration="17893000" />
     </task>
     <task id="LOCAL-00001" summary="WorkWithDB">
       <created>1622149434236</created>

@@ -17,8 +17,8 @@ public class WeatherController implements Controller {
         String city = req.getParameter("city");
         WeatherAPI weather = weatherMainClassAPI.myAPI(city);
         req.setAttribute("city", city);
-        req.setAttribute("temp", weather.getMain().getTemp());
-        req.setAttribute("fillTemp", weather.getMain().getFeels_like());
+        req.setAttribute("temp", (int)(weather.getMain().getTemp() - 273));
+        req.setAttribute("fillTemp", (int)(weather.getMain().getFeels_like() - 273));
         req.setAttribute("pressure", weather.getMain().getPressure());
         req.setAttribute("windSpeed", weather.getWind().getSpeed());
         req.setAttribute("weatherType", weather.getWeather().get(0).getDescription());

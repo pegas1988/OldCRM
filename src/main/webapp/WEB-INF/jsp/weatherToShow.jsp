@@ -31,11 +31,11 @@
             <label name="city" class="coll form-label">${city}</label>
         </div>
         <div class="coll mb-3">
-            <label class="coll form-label">The temperature is: </label>
+            <label class="coll form-label">The temperature is (C): </label>
             <label name="temp" class="coll form-label">${temp}</label>
         </div>
         <div class="coll mb-3">
-            <label class="form-label">Fills like: </label>
+            <label class="form-label">Fills like (C): </label>
             <label name="fillTemp" class="form-label">${fillTemp}</label>
         </div>
         <div class="coll mb-3">
@@ -43,7 +43,7 @@
             <label name="pressure" class="form-label">${pressure}</label>
         </div>
         <div class="coll mb-3">
-            <label class="form-label">The speed of the wind is: </label>
+            <label class="form-label">The speed of the wind is (mps): </label>
             <label name="windSpeed" class="form-label">${windSpeed}</label>
         </div>
         <div class="coll mb-3">
