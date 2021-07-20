@@ -1,0 +1,16 @@
+{
+  "modelName": "TrackingDocument",
+  "calledMethod": "getStatusDocuments",
+  "methodProperties": {
+    "documents": [
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      },
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      }
+    ]
+  }
+}

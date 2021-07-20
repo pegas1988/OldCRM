@@ -68,9 +68,4 @@ public class WeatherAPI {
         this.wind = wind;
     }
 
-//    @JsonCreator
-//    public WeatherAPI(@JsonProperty("coord") Coord coord, @JsonProperty("wind") Wind wind) {
-//        this.coord = coord;
-//        this.wind = wind;
-//    }
 }

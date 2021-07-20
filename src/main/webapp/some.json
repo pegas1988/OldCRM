@@ -1,43 +1,33 @@
 {
-  "coord": {
-    "lon": -0.1257,
-    "lat": 51.5085
-  },
-  "weather": [
-    {
-      "id": 800,
-      "main": "Clear",
-      "description": "clearsky",
-      "icon": "01d"
-    }
-  ],
-  "base": "stations",
-  "main": {
-    "temp": 294.03,
-    "feels_like": 294.18,
-    "temp_min": 290.8,
-    "temp_max": 296.58,
-    "pressure": 1026,
-    "humidity": 77
-  },
-  "visibility": 10000,
-  "wind": {
-    "speed": 1.03,
-    "deg": 0
-  },
-  "clouds": {
-    "all": 0
-  },
-  "dt": 1626593232,
-  "sys": {
-    "type": 2,
-    "id": 2006068,
-    "country": "GB",
-    "sunrise": 1626581075,
-    "sunset": 1626638909
-  },
-  "timezone": 3600,
-  "id": 2643743,
-  "name": "London",
-  "cod": 200
+  "modelName": "TrackingDocument",
+  "calledMethod": "getStatusDocuments",
+  "methodProperties": {
+    "Documents": [
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      },
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      }
+    ]
+  }
+}
+
+{
+  "modelName": "TrackingDocument",
+  "calledMethod": "getStatusDocuments",
+  "methodProperties": {
+    "documents": [
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      },
+      {
+        "DocumentNumber": "59000710345486",
+        "Phone": "+380982489915"
+      }
+    ]
+  }
 }
