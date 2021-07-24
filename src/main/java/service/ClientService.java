@@ -20,8 +20,15 @@ public class ClientService {
         return allClients;
     }
 
-    public List<Client> findByName(String name, String secondName) {
-        List<Client> byName = clientDao.findByFirstNameAndSecondName(name, secondName);
+    public ClientService() {
+    }
+
+    public ClientService(ClientDao clientDao) {
+        this.clientDao = clientDao;
+    }
+
+    public Client findByName(String name, String secondName) {
+        Client byName = clientDao.findByFirstNameAndSecondName(name, secondName);
         if (Objects.isNull(byName)) {
             System.out.println(String.format("Clinet with name %s was not found", name));
         }

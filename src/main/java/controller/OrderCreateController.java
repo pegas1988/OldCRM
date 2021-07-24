@@ -31,7 +31,7 @@ public class OrderCreateController implements Controller {
         String orderStage = Stages.ORDER.toString();
         String responsible = userService.findById((int) req.getSession().getAttribute("UserId")).getUserRole().toString();
         Order order = new Order();
-        order.setClient(clientService.findByName(clientName, clientLastName).get(0));
+        order.setClient(clientService.findByName(clientName, clientLastName));
         order.setDateCreating(date);
         order.setComments(comment);
         order.setStage(orderStage);

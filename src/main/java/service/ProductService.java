@@ -8,6 +8,13 @@ import java.util.List;
 public class ProductService {
     ProductDao productDao = new ProductDao();
 
+    public ProductService() {
+    }
+
+    public ProductService(ProductDao productDao) {
+        this.productDao = productDao;
+    }
+
     public List<Product> findAllProducts() {
         return productDao.findAll();
     }
@@ -17,6 +24,9 @@ public class ProductService {
 
     }
 
+    public Product findById(Integer id){
+        return productDao.findById(id);
+    }
     public void deleteByName(Product product) {
         productDao.deleteFromProduct(product);
     }

@@ -57,6 +57,10 @@ public class ProductDao {
     }
 
 
+    public Product findById(Integer id){
+        return new Product();
+    }
+
     public void create(Product product) {
         connectionPool = ContextForConnectionPool.get();
         MaterialDao materialDao = new MaterialDao();

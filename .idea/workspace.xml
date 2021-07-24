@@ -7,26 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/Documents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/MethodProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaMainEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponseFinal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/PoshtaMainClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/SerializationPoshta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/anothe.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/postToShow.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/CRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/WeatherAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/some.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/some.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrderCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrderCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClientServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MaterialServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MaterialServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +87,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,6 +127,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CRMtoTest" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -140,12 +139,18 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyApps\Test\CRM\src\main" />
+      <recent name="D:\MyApps\Test\CRM\src" />
       <recent name="D:MyApps/CRMtoTest" />
       <recent name="D\MyApps" />
       <recent name="D:\MyApps\CRM\src\main\webapp\WEB-INF\jsp" />
-      <recent name="D:\MyApps\CRM\src\main\webapp\WEB-INF\jsp\icons" />
-      <recent name="D:\MyApps\CRM\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -160,29 +165,50 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.CRM">
-    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.MainClass" />
+  <component name="RunManager" selected="JUnit.ClientServiceTest">
+    <configuration name="ClientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClientServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WeatherMainClassAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="service.WeatherMainClassAPI" />
+    <configuration name="ClientServiceTest.findByName_IfClientWillBeFind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRM" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClientServiceTest" />
+      <option name="METHOD_NAME" value="findByName_IfClientWillBeFind" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaterialServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRM" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MaterialServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaterialServiceTest.delete_ifMaterialEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRM" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MaterialServiceTest" />
+      <option name="METHOD_NAME" value="delete_ifMaterialEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRM" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ProductServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -323,15 +349,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MainClass" />
-      <item itemvalue="Application.WeatherMainClassAPI" />
       <item itemvalue="Tomcat Server.CRM" />
+      <item itemvalue="JUnit.MaterialServiceTest" />
+      <item itemvalue="JUnit.ProductServiceTest" />
+      <item itemvalue="JUnit.MaterialServiceTest.delete_ifMaterialEquals" />
+      <item itemvalue="JUnit.ClientServiceTest.findByName_IfClientWillBeFind" />
+      <item itemvalue="JUnit.ClientServiceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WeatherMainClassAPI" />
-        <item itemvalue="Application.MainClass" />
-        <item itemvalue="Application.MainClass" />
+        <item itemvalue="JUnit.ClientServiceTest" />
+        <item itemvalue="JUnit.ClientServiceTest.findByName_IfClientWillBeFind" />
+        <item itemvalue="JUnit.MaterialServiceTest" />
+        <item itemvalue="JUnit.MaterialServiceTest.delete_ifMaterialEquals" />
+        <item itemvalue="JUnit.ProductServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -422,7 +453,9 @@
       <workItem from="1626557817432" duration="7899000" />
       <workItem from="1626601634887" duration="28000" />
       <workItem from="1626603549996" duration="18743000" />
-      <workItem from="1626800364980" duration="12802000" />
+      <workItem from="1626800364980" duration="13427000" />
+      <workItem from="1627130063597" duration="3439000" />
+      <workItem from="1627133533741" duration="10160000" />
     </task>
     <task id="LOCAL-00001" summary="WorkWithDB">
       <created>1622149434236</created>

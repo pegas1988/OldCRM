@@ -8,6 +8,13 @@ import java.util.List;
 public class MaterialService {
     MaterialDao materialDao = new MaterialDao();
 
+    public MaterialService() {
+    }
+
+    public MaterialService(MaterialDao materialDao) {
+        this.materialDao = materialDao;
+    }
+
 
     public void createMaterial(Material material) {
         materialDao.createNewMaterial(material);

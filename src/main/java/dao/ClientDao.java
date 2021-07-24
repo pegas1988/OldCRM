@@ -92,7 +92,7 @@ public class ClientDao {
         return clients;
     }
 
-    public List<Client> findByFirstNameAndSecondName(String name, String secondName) {
+    public Client findByFirstNameAndSecondName(String name, String secondName) {
         connectionPool = ContextForConnectionPool.get();
         List<Client> clients = new ArrayList<>();
         try (Connection connection = connectionPool.get();
@@ -113,7 +113,7 @@ public class ClientDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return clients;
+        return clients.get(0);
     }
 }
 

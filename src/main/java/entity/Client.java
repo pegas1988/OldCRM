@@ -13,6 +13,11 @@ public class Client {
     private String diagnose;
     private String twoDScanname;
 
+    public Client(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getTwoDScan() {
         return twoDScanname;
     }

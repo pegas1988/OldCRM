@@ -6,6 +6,14 @@ import java.util.List;
 public class Product {
     private Integer Id;
 
+    public Product() {
+    }
+
+    public Product(String productName, int timeToProduce) {
+        this.productName = productName;
+        this.timeToProduce = timeToProduce;
+    }
+
     public void setId(Integer id) {
         Id = id;
     }
