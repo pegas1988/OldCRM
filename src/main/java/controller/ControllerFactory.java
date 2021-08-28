@@ -53,6 +53,8 @@ public class ControllerFactory {
         controllerMap.put("GET/updateProduct", new ShowPageController("updateProduct"));
         controllerMap.put("POST/updateProduct", new UpdateProductController());
         controllerMap.put("GET/productUpdateProceed", new ShowPageController("productUpdateProceed"));
+        controllerMap.put("GET/deleteProduct", new ShowDeleteProductController("deleteProduct"));
+        controllerMap.put("POST/deleteProduct", new DeleteProductController());
     }
 
     public Controller getController(HttpServletRequest request) {

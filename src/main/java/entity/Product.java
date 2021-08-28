@@ -34,10 +34,6 @@ public class Product {
         return Id;
     }
 
-    /*public void setId(Integer id) {
-        Id = id;
-    }*/
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
