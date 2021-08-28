@@ -12,14 +12,14 @@ import java.util.List;
 
 public class UserDao {
 
-    private static final String SELECT_FROM_USER = "select * from \"user\"";
-    private static final String SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME = "select * from \"user\" where first_name = ? and last_name = ?";
-    private static final String INSERT_INTO_USER = "insert into \"user\" (first_name, last_name, password, user_role, email) VALUES (?,?,?,?,?)";
-    private static final String DELETE_FROM_USER = "delete from \"user\" where first_name = ? and last_name = ?";
-    private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update \"user\" set password = ? where first_name = ? and last_name = ? and password = ?";
-    private static final String FIND_USER_BY_EMAIL = "select * from \"user\" where email =?";
-    private static final String FIND_USER_BY_ID = "select * from \"user\" where user_id =?";
-    private static final String UPDATE_USER = "update \"user\" set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
+    private static final String SELECT_FROM_USER = "select * from myuser";
+    private static final String SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME = "select * from myuser where first_name = ? and last_name = ?";
+    private static final String INSERT_INTO_USER = "insert into myuser (first_name, last_name, password, user_role, email) VALUES (?,?,?,?,?)";
+    private static final String DELETE_FROM_USER = "delete from myuser where first_name = ? and last_name = ?";
+    private static final String UPDATE_USER_SET_PASSWORD_WHERE_FIRST_NAME_AND_LAST_NAME_AND_PASSWORD = "update myuser set password = ? where first_name = ? and last_name = ? and password = ?";
+    private static final String FIND_USER_BY_EMAIL = "select * from myuser where email =?";
+    private static final String FIND_USER_BY_ID = "select * from myuser where user_id =?";
+    private static final String UPDATE_USER = "update myuser set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
 
     ConnectionPool connectionPool;
 

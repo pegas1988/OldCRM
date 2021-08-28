@@ -26,7 +26,7 @@ public class LoginController implements Controller {
         User userFind = new User(userName, userLastName);
         User user = userService.findByFirstAndLastName(userFind);
         if (user.getPassword().equals(password)) {
-            //req.setAttribute("button", button);
+            req.setAttribute("button", button);
             req.setAttribute("user", user);
 
             switch (user.getUserRole()) {

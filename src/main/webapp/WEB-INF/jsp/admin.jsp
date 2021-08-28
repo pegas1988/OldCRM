@@ -67,8 +67,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Products</h5>
                     <a href="/CRM_war/CRM_war/productAdd" style="width: 6rem;" class="btn btn-secondary m-1">Create</a>
-                    <a href="/CRM_war/updateProduct" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
-                    <a href="/CRM_war/deleteProduct" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
+                    <a href="/CRM_war/CRM_war/updateProduct" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
+                    <a href="/CRM_war/CRM_war/deleteProduct" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
                     <a href="/CRM_war/CRM_war/listOfProducts" style="width: 6rem;" class="btn btn-secondary m-1">See
                         all</a>
                 </div>

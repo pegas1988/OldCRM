@@ -24,14 +24,19 @@ public class ProductService {
 
     }
 
-    public Product findById(Integer id){
+    public Product findById(Integer id) {
         return productDao.findById(id);
     }
+
     public void deleteByName(Product product) {
         productDao.deleteFromProduct(product);
     }
 
     public int getIDByName(Product product) {
         return productDao.productID(product);
+    }
+
+    public Product updateByName(Product productToFind, String productNewName) {
+        return productDao.updateByName(productToFind, productNewName);
     }
 }

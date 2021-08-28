@@ -15,6 +15,7 @@ public class ProductDao {
     private static final String DELETE_FROM_PRODUCT = "delete from product where product_name = ?";
     private static final String GET_PRODUCT_ID_BY_NAME = "select product_id from product where product_name = ?";
     private static final String INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES = "insert into product_material (product_id, material_id) values (?, ?)";
+    private static final String UPDATE_BY_NAME = "update product set product_name = ? where product_name = ?";
 
     ConnectionPool connectionPool;
 
@@ -65,17 +66,9 @@ public class ProductDao {
         connectionPool = ContextForConnectionPool.get();
         MaterialDao materialDao = new MaterialDao();
         try (Connection connection = connectionPool.get();
-             //PreparedStatement preparedStatementProductID = connection.prepareStatement(INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES);
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_PRODUCT)) {
-            //preparedStatement.setInt(1, product.getPriceOfAllMaterials());
-            //preparedStatement.setInt(2, product.getTimeToProduce());
             preparedStatement.setString(1, product.getProductName());
             preparedStatement.execute();
-            /*for (int e = 0; e < product.getMaterialList().size(); e++) {
-                preparedStatementProductID.setInt(1, productID(product));
-                preparedStatementProductID.setInt(2, materialDao.materialID(product.getMaterialList().get(e)));
-                preparedStatementProductID.execute();
-            }*/
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -90,5 +83,18 @@ public class ProductDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public Product updateByName(Product productToFind, String productNewName) {
+        connectionPool = ContextForConnectionPool.get();
+        try (Connection connection = connectionPool.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BY_NAME)) {
+            preparedStatement.setString(2, productToFind.getProductName());
+            preparedStatement.setString(1, productNewName);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        Product actualProduct = new Product(productNewName);
+        return actualProduct;
     }
 }

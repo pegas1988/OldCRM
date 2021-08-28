@@ -7,21 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productUpdateProceed.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/updateProduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/OrderCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/OrderCreateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClientServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MaterialServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MaterialServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,9 +83,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -165,7 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientServiceTest">
+  <component name="RunManager" selected="Tomcat Server.CRM">
     <configuration name="ClientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRM" />
       <option name="PACKAGE_NAME" value="" />
@@ -349,12 +345,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.CRM" />
       <item itemvalue="JUnit.MaterialServiceTest" />
       <item itemvalue="JUnit.ProductServiceTest" />
       <item itemvalue="JUnit.MaterialServiceTest.delete_ifMaterialEquals" />
       <item itemvalue="JUnit.ClientServiceTest.findByName_IfClientWillBeFind" />
       <item itemvalue="JUnit.ClientServiceTest" />
+      <item itemvalue="Tomcat Server.CRM" />
     </list>
     <recent_temporary>
       <list>
@@ -370,32 +366,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7201f641" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@562c5289" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@555ce9cb" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@aaa1e3fe" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2b34bb13" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -455,7 +426,10 @@
       <workItem from="1626603549996" duration="18743000" />
       <workItem from="1626800364980" duration="13427000" />
       <workItem from="1627130063597" duration="3439000" />
-      <workItem from="1627133533741" duration="10160000" />
+      <workItem from="1627133533741" duration="10164000" />
+      <workItem from="1627667107164" duration="1470000" />
+      <workItem from="1628336653536" duration="98000" />
+      <workItem from="1630172760137" duration="2519000" />
     </task>
     <task id="LOCAL-00001" summary="WorkWithDB">
       <created>1622149434236</created>
@@ -544,6 +518,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/servlet/DispatcherServlet.java</url>
           <line>27</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/LoginController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/UpdateProductController.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

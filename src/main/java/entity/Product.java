@@ -14,6 +14,9 @@ public class Product {
         this.timeToProduce = timeToProduce;
     }
 
+    public Product(String productName) {
+    }
+
     public void setId(Integer id) {
         Id = id;
     }

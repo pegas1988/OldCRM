@@ -50,6 +50,9 @@ public class ControllerFactory {
         controllerMap.put("POST/weather", new WeatherController());
         controllerMap.put("GET/post", new ShowPageController("post"));
         controllerMap.put("POST/post", new PostController());
+        controllerMap.put("GET/updateProduct", new ShowPageController("updateProduct"));
+        controllerMap.put("POST/updateProduct", new UpdateProductController());
+        controllerMap.put("GET/productUpdateProceed", new ShowPageController("productUpdateProceed"));
     }
 
     public Controller getController(HttpServletRequest request) {
