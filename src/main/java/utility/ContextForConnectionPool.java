@@ -4,7 +4,7 @@ public class ContextForConnectionPool {
 
     private static ConnectionPool connectionPool;
 
-    public static ConnectionPool get()  {
+    public static ConnectionPool get() {
         try {
             if (connectionPool == null) {
                 connectionPool = new ConnectionPool();

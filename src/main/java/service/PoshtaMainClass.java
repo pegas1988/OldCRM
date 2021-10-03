@@ -2,7 +2,6 @@ package service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.Poshta.PoshtaResponse;
 import entity.Poshta.PoshtaResponseFinal;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;

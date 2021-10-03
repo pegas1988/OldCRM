@@ -10,6 +10,11 @@ import entity.weatherEntity.Wind;
 
 import java.util.List;
 
+/**
+ * This class:
+ * - describe main entity of the application
+ * - annotated with jackson annotations to map json request/response
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherAPI {
 

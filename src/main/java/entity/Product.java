@@ -3,6 +3,9 @@ package entity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class describe the product what could be created on the manufacture
+ */
 public class Product {
     private Integer Id;
 

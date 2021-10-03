@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class describe daily report for manufacture process
+ */
 public class DailyReport {
     private List<Product> madeProducts = new ArrayList<>();
     private Date date;

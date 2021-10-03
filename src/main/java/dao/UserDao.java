@@ -1,10 +1,9 @@
 package dao;
 
-import utility.ConnectionPool;
-import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
 import entity.User;
 import entity.roles;
+import utility.ConnectionPool;
+import utility.ContextForConnectionPool;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,7 +71,7 @@ public class UserDao {
     public User selectFromUserByFirstNameAndLastName(User user) {
         connectionPool = ContextForConnectionPool.get();
         User searchedUser = new User();
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_FROM_USER_BY_FIRST_NAME_LAST_NAME)) {
             preparedStatement.setString(1, user.getFirstName());
@@ -118,7 +117,7 @@ public class UserDao {
     public User findByEmail(User userFind) {
         connectionPool = ContextForConnectionPool.get();
         User userToFind = new User();
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL)) {
             preparedStatement.setString(1, userFind.getEmail());

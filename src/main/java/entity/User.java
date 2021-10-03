@@ -1,5 +1,8 @@
 package entity;
 
+/**
+ * This class describe user
+ */
 public class User {
 
     private Integer userID;

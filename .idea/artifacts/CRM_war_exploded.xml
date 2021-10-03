@@ -35,7 +35,7 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.3" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.20" />
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
-          <element id="library" level="project" name="Maven: org.jetbrains:annotations:21.0.1" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:22.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

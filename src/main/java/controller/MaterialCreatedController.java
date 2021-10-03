@@ -16,6 +16,7 @@ public class MaterialCreatedController implements Controller {
         String colour = req.getParameter("colour");
         String type = req.getParameter("type");
         String price = req.getParameter("price");
+
         Material material = new Material();
         material.setColour(colour);
         material.setMaterialName(name);
@@ -23,6 +24,7 @@ public class MaterialCreatedController implements Controller {
         material.setQuantity(Integer.parseInt(quantity));
         material.setType(type);
         materialService.createMaterial(material);
+
         return new ControllerResultDto("materialCreated", true);
 
     }

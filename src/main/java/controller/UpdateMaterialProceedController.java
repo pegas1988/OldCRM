@@ -18,13 +18,16 @@ public class UpdateMaterialProceedController implements Controller {
         String colour = req.getParameter("colour");
         String type = req.getParameter("type");
         String quantity = req.getParameter("quantity");
+
         Material material = new Material();
         material.setType(type);
         material.setColour(colour);
         material.setMaterialName(name);
         material.setQuantity(Integer.parseInt(quantity));
         material.setPrice(Integer.parseInt(price));
+
         req.getSession().setAttribute("material", material);
+
         return new ControllerResultDto("materialToUpdate", true);
     }
 }

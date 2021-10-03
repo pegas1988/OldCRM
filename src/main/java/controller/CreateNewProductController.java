@@ -14,9 +14,11 @@ public class CreateNewProductController implements Controller {
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("productName");
+
         Product product = new Product();
         product.setProductName(name);
         productService.createProduct(product);
+
         return new ControllerResultDto("productCreated");
     }
 }

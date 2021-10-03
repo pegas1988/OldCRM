@@ -4,6 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * This class:
+ * - annotated with jackson annotations to map json request/response
+ * - describe main entity and will take in all sub entities
+ * - sub entity
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PoshtaResponse {
 
@@ -74,12 +81,12 @@ public class PoshtaResponse {
     }
 
     @JsonCreator
-    public PoshtaResponse(@JsonProperty("DateCreated")String dateCreated,
-                          @JsonProperty("DocumentWeight")String documentWeight,
-                          @JsonProperty("DocumentCost")String documentCost,
-                          @JsonProperty("RecipientFullName")String recipientFullName,
-                          @JsonProperty("ScheduledDeliveryDate")String scheduledDeliveryDate,
-                          @JsonProperty("CityRecipient")String cityRecipient) {
+    public PoshtaResponse(@JsonProperty("DateCreated") String dateCreated,
+                          @JsonProperty("DocumentWeight") String documentWeight,
+                          @JsonProperty("DocumentCost") String documentCost,
+                          @JsonProperty("RecipientFullName") String recipientFullName,
+                          @JsonProperty("ScheduledDeliveryDate") String scheduledDeliveryDate,
+                          @JsonProperty("CityRecipient") String cityRecipient) {
         DateCreated = dateCreated;
         DocumentWeight = documentWeight;
         DocumentCost = documentCost;

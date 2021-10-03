@@ -1,9 +1,8 @@
 package dao;
 
+import entity.Client;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
-import entity.Client;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ public class ClientDao {
     private static final String INSERT_INTO_CLIENT = "insert into client (first_name, last_name, sex) values (?,?,?)";
     private static final String DELETE_FROM_CLIENT = "delete from client where last_name = ?";
     private static final String FIND_CLIENT_BY_ID = "select *from client where client_id = ?";
-    //private static final String UPDATE_CLIENTS_Di_BY_NAME = "update client set last_name = 'changed' where first_name = ?";
 
     ConnectionPool connectionPool;
 
@@ -43,7 +41,7 @@ public class ClientDao {
 
     public void create(Client client, Connection connection) {
         try (
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_CLIENT, Statement.RETURN_GENERATED_KEYS);
         ) {
             preparedStatement.setString(1, client.getFirstName());
             preparedStatement.setString(2, client.getLastName());

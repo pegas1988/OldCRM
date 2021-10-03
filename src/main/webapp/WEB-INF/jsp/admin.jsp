@@ -84,10 +84,10 @@
                 </center>
                 <div class="card-body">
                     <h5 class="card-title">Leads</h5>
-                    <a href="/CRM_war/addLead" style="width: 6rem;" class="btn btn-secondary m-1">Creat</a>
+                    <a href="/CRM_war/CRM_war/createClient" style="width: 6rem;" class="btn btn-secondary m-1">Creat</a>
                     <a href="/CRM_war/updateLead" style="width: 6rem;" class="btn btn-secondary m-1">Update</a>
                     <a href="/CRM_war/deleteLead" style="width: 6rem;" class="btn btn-secondary m-1">Delete</a>
-                    <a href="/CRM_war/findAllLeads" style="width: 6rem;" class="btn btn-secondary m-1">See all</a>
+                    <a href="/CRM_war/CRM_war/listOfOrders" style="width: 6rem;" class="btn btn-secondary m-1">See all</a>
                 </div>
             </div>
         </div>

@@ -1,23 +1,21 @@
 package dao;
 
+import entity.Order;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
-import entity.Order;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDao {
-    private static final String SELECT_ALL = "select * from order";
-    private static final String FIND_BY_CREATING_DATE = "select * from order where creating_date = ?";
-    private static final String FIND_BY_PRODUCT = "select * from order where product = ?";
-    private static final String FIND_BY_ID = "select * from order where order_id = ?";
+    private static final String SELECT_ALL = "select * from \"order\"";
+    private static final String FIND_BY_CREATING_DATE = "select * from \"order\" where creating_date = ?";
+    private static final String FIND_BY_PRODUCT = "select * from \"order\" where product = ?";
+    private static final String FIND_BY_ID = "select * from \"order\" where order_id = ?";
     private static final String CREATE_ORDER = "insert into \"order\" (client_fio, comment, order_stage, responsible_person) values (?,?,?,?)";
-    private static final String DELETE = "update order set client_fio = ?";
+    private static final String DELETE = "update \"order\" set client_fio = ?";
     private static final String ORDER_PRODUCT = "insert into order_product (order_id, product_name) values (?,?)";
-    //DELETE will work as i marker in line with other parameters (was deleted / alive)
 
     ConnectionPool connectionPool;
 
@@ -27,12 +25,12 @@ public class OrderDao {
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER, Statement.RETURN_GENERATED_KEYS);
              PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT);
         ) {
-            //preparedStatement.setDate(1, Date.valueOf(order.getDateCreating().toString()));
-            preparedStatement.setString(1, order.getClient().getFirstName());
+            preparedStatement.setString(1, order.getClient());
             preparedStatement.setString(2, order.getComments());
             preparedStatement.setString(3, order.getStage());
             preparedStatement.setString(4, order.getResponsibleUser());
             preparedStatement.execute();
+
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
             while (generatedKeys.next()) {
                 order.setOrderID(generatedKeys.getInt("order_id"));
@@ -69,11 +67,11 @@ public class OrderDao {
             while (resultSet.next()) {
                 Order order = new Order();
                 order.setOrderID(resultSet.getInt("order_id"));
-                order.setLifeCycle(resultSet.getString("life_cycle"));
                 order.setComments(resultSet.getString("comment"));
                 order.setStage(resultSet.getString("order_stage"));
-                order.setDateCreating(resultSet.getTimestamp("date_of_birth"));
+                order.setDateCreating(resultSet.getTimestamp("creating_date"));
                 order.setResponsibleUser(resultSet.getString("responsible_person"));
+                order.setClient(resultSet.getString("client_fio"));
                 orders.add(order);
             }
         } catch (SQLException e) {
@@ -85,7 +83,7 @@ public class OrderDao {
     public Order findById(Integer id) {
         connectionPool = ContextForConnectionPool.get();
         Order order = new Order();
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_ID)) {
             preparedStatement.setInt(1, id);
@@ -107,7 +105,6 @@ public class OrderDao {
     public List<Order> findByProduct(String product) {
         connectionPool = ContextForConnectionPool.get();
         List<Order> orders = new ArrayList<>();
-        ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_PRODUCT)) {
             preparedStatement.setString(1, product);
@@ -121,7 +118,6 @@ public class OrderDao {
     public List<Order> findByCreatingDate(Date date) {
         connectionPool = ContextForConnectionPool.get();
         List<Order> orders = new ArrayList<>();
-        ResultSet resultSet = null;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_CREATING_DATE)) {
             preparedStatement.setDate(1, date);

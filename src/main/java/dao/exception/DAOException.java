@@ -3,9 +3,8 @@ package dao.exception;
 import java.sql.SQLException;
 
 public class DAOException extends SQLException {
-    public void dangerZone(){
+    public void dangerZone() {
         System.out.println("DAO Layer exception");
     }
 }
 
-//some code here

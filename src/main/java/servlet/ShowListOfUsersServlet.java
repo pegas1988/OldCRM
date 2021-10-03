@@ -20,7 +20,8 @@ public class ShowListOfUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<User> listOfUsers = userService.findAllUsers();
         req.setAttribute("list", listOfUsers);
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/list2.jsp");
-        requestDispatcher.forward(req,resp);
+        requestDispatcher.forward(req, resp);
     }
 }

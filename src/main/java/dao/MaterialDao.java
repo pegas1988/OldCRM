@@ -1,8 +1,8 @@
 package dao;
 
+import entity.Material;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import entity.Material;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,7 +24,6 @@ public class MaterialDao {
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_MATERIAL)) {
             preparedStatement.setInt(1, material.getQuantity());
             preparedStatement.setString(2, material.getColour());
-            //preparedStatement.setString(3, material.getDensity());
             preparedStatement.setString(3, material.getType());
             preparedStatement.setInt(4, material.getPrice());
             preparedStatement.setString(5, material.getMaterialName());
@@ -114,7 +113,6 @@ public class MaterialDao {
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_MATERIAL)) {
             preparedStatement.setInt(1, material.getQuantity());
             preparedStatement.setString(2, material.getColour());
-            //preparedStatement.setString(3, material.getDensity());
             preparedStatement.setString(3, material.getType());
             preparedStatement.setInt(4, material.getPrice());
             preparedStatement.setString(5, material.getMaterialName());

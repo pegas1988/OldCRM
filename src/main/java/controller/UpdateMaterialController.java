@@ -10,6 +10,7 @@ import java.util.List;
 
 public class UpdateMaterialController implements Controller {
     MaterialService materialService = new MaterialService();
+
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String type = req.getParameter("type");

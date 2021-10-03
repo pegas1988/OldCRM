@@ -36,9 +36,9 @@ public class ControllerFactory {
         controllerMap.put("GET/seeAllMaterials", new ShowSeeAllMaterialsController("seeAllMaterials"));
         controllerMap.put("GET/materialToUpdate", new ShowSeeAllMaterialsController("materialToUpdate"));
         controllerMap.put("GET/productAdd", new ShowPageController("productAdd"));
-        controllerMap.put("GET/createClient", new ShowPageController("createClient"));
+        controllerMap.put("GET/createClient", new ShowCreateClientControllerWithList("createClient"));
         controllerMap.put("POST/materialToUpdate", new MaterialToUpdateController());
-        controllerMap.put("POST/createClient", new ClientCreateController());
+        controllerMap.put("POST/createClient", new ClientCreateControllerWithList());
         controllerMap.put("POST/productAdd", new CreateNewProductController());
         controllerMap.put("GET/clientCreated", new ShowPageController("clientCreated"));
         controllerMap.put("GET/listOfClients", new ListOfClientsController("listOfClients"));
@@ -55,6 +55,10 @@ public class ControllerFactory {
         controllerMap.put("GET/productUpdateProceed", new ShowPageController("productUpdateProceed"));
         controllerMap.put("GET/deleteProduct", new ShowDeleteProductController("deleteProduct"));
         controllerMap.put("POST/deleteProduct", new DeleteProductController());
+        controllerMap.put("GET/productSum", new ShowDeleteProductController("productSum"));
+        controllerMap.put("POST/productSum", new ProductSumController());
+        controllerMap.put("GET/orderWasCreated", new ShowPageController("orderWasCreated"));
+        controllerMap.put("GET/listOfOrders", new ShowListOfOrdersController("listOfOrders"));
     }
 
     public Controller getController(HttpServletRequest request) {

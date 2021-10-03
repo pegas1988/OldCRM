@@ -14,10 +14,13 @@ public class DeleteProductController implements Controller {
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("productName");
+
         Product product = new Product();
         product.setProductName(name);
         productService.deleteByName(product);
+
         req.getSession().setAttribute("product", product);
+
         return new ControllerResultDto("deleteProduct", true);
 
     }

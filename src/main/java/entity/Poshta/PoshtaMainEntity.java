@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * This class:
+ * - annotated with jackson annotations to map json request/response
+ * - describe main entity and will take in all sub entities
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PoshtaMainEntity {
 

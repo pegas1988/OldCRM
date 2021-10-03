@@ -62,5 +62,4 @@ public class ClientService {
     public void delete(Client client) {
         clientDao.delete(client);
     }
-    //public void update(Client client) {clientDao.update(client);}
 }

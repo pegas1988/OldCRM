@@ -14,10 +14,13 @@ public class DeleteMaterialController implements Controller {
 
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("materialName");
+
         Material material = new Material();
         material.setMaterialName(name);
         materialService.deleteFromMaterial(material);
+
         req.getSession().setAttribute("material", material);
+
         return new ControllerResultDto("deleteMaterial", true);
 
     }

@@ -1,27 +1,26 @@
 package controller;
 
-
-import entity.Client;
-import service.ClientService;
+import entity.Order;
+import service.OrderService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ShowCreateClientControllerWithList implements Controller {
-
+public class ShowListOfOrdersController implements Controller {
     private final String VIEW_NAME;
-    private ClientService clientService = new ClientService();
+    OrderService orderService = new OrderService();
 
-    public ShowCreateClientControllerWithList(String VIEW_NAME) {
+    public ShowListOfOrdersController(String VIEW_NAME) {
         this.VIEW_NAME = VIEW_NAME;
     }
 
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        List<Client> clientList = clientService.findAll();
-        req.setAttribute("clientList", clientList);
+        List<Order> orderList;
+        orderList = orderService.findAllOrders();
+        req.setAttribute("orderList", orderList);
         return new ControllerResultDto(VIEW_NAME);
     }
 }

@@ -6,7 +6,7 @@ import service.MaterialService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CreateMaterialController implements Controller{
+public class CreateMaterialController implements Controller {
 
     MaterialService materialService = new MaterialService();
 
@@ -17,6 +17,7 @@ public class CreateMaterialController implements Controller{
         String colour = req.getParameter("colour");
         String type = req.getParameter("type");
         String price = req.getParameter("price");
+
         Material material = new Material();
         material.setColour(colour);
         material.setMaterialName(name);
@@ -24,6 +25,7 @@ public class CreateMaterialController implements Controller{
         material.setQuantity(Integer.parseInt(quantity));
         material.setType(type);
         materialService.createMaterial(material);
+
         return new ControllerResultDto("materialCreated", true);
 
     }

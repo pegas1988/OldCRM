@@ -19,7 +19,7 @@ public class ShowDeleteMaterialController implements Controller {
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
         List<Material> materials = materialService.findAllMaterials();
-        req.setAttribute("list" , materials);
+        req.setAttribute("list", materials);
         return new ControllerResultDto(VIEW_NAME);
     }
 }

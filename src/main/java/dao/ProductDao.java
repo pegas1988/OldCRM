@@ -1,9 +1,8 @@
 package dao;
 
+import entity.Product;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
-import entity.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class ProductDao {
     public int productID(Product product) {
         connectionPool = ContextForConnectionPool.get();
         int productID = 0;
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_PRODUCT_ID_BY_NAME)) {
             preparedStatement.setString(1, product.getProductName());
@@ -58,13 +57,12 @@ public class ProductDao {
     }
 
 
-    public Product findById(Integer id){
+    public Product findById(Integer id) {
         return new Product();
     }
 
     public void create(Product product) {
         connectionPool = ContextForConnectionPool.get();
-        MaterialDao materialDao = new MaterialDao();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_PRODUCT)) {
             preparedStatement.setString(1, product.getProductName());
@@ -84,6 +82,7 @@ public class ProductDao {
             e.printStackTrace();
         }
     }
+
     public Product updateByName(Product productToFind, String productNewName) {
         connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();

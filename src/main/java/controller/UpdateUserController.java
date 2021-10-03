@@ -12,9 +12,12 @@ public class UpdateUserController implements Controller {
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
         String email = req.getParameter("email");
+
         User userFind = new User(email);
         User user = userService.findByEmail(userFind);
+
         req.getSession().setAttribute("user", user);
+
         return new ControllerResultDto("updateProceed", true);
     }
 }

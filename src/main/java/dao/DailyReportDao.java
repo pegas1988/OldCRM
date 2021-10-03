@@ -1,9 +1,8 @@
 package dao;
 
+import entity.DailyReport;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
-import utility.PostgresUtil;
-import entity.DailyReport;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ public class DailyReportDao {
     private static final String SELECT_ALL = "select from daily_report";
     private static final String SELECT_BY_DATE = "select * from daily_report where date_of_report = ?";
     private static final String CREATE_REPORT = "insert into daily_report (date_of_report, responsible_person) values (?,?)";
-    //private static final String SELECT_BY_PRODUCT = "";
 
     ConnectionPool connectionPool;
 

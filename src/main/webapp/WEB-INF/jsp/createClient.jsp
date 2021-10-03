@@ -36,8 +36,48 @@
             </div>
         </div>
         <div class="col-12">
-            <button class="btn btn-outline-secondary" type="submit">Create</button>
+            <input type="hidden" class="form-control" value = "addClient" id="exampleInputName" name="addClient"
+                   required>
+            <button class="btn btn-outline-secondary" name= "ifClientWasCreated" value="ifClientWasCreated" type="submit">Create</button>
         </div>
+    </form>
+    <form method="post">
+        <center>
+            <div class="container m-3">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">ClientName</th>
+                        <th scope="col">ClientLastName</th>
+                        <th scope="col">Gender</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <c:forEach items="${clientList}" var="client">
+                    <tr>
+                        <td><c:out value="${client.firstName}"/></td>
+                        <td><c:out value="${client.lastName}"/></td>
+                        <td><c:out value="${client.sex}"/></td>
+                        <td>
+                            <form method="post">
+                                <div class="d-grid gap-2">
+                                    <input type="hidden" name="clientFirstName" value="${client.firstName}">
+                                    <input type="hidden" name="clientLastName" value="${client.lastName}">
+                                    <input type="hidden" name="gender" value="${client.sex}">
+                                    <button name="Submit" type="Submit" class="btn btn-secondary">
+                                        UseIt
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    </c:forEach>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </center>
     </form>
 </center>
 </body>

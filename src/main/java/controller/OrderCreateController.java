@@ -24,22 +24,29 @@ public class OrderCreateController implements Controller {
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String clientName = req.getParameter("clientFirstName");
         String clientLastName = req.getParameter("clientLastName");
+
         Date date = new Date();
+
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         String creationDate = formatter.format(date);
         String comment = req.getParameter("comment");
         String orderStage = Stages.ORDER.toString();
         String responsible = userService.findById((int) req.getSession().getAttribute("UserId")).getUserRole().toString();
+
         Order order = new Order();
-        order.setClient(clientService.findByName(clientName, clientLastName));
+        order.setClient(clientName + " " + clientLastName);
         order.setDateCreating(date);
         order.setComments(comment);
         order.setStage(orderStage);
         order.setResponsibleUser(responsible);
+
         List<String> products = new ArrayList<>();
+
         products.add(req.getParameter("productOne"));
         products.add(req.getParameter("productTwo"));
+
         orderService.createOrder(order, products);
+
         return new ControllerResultDto("orderCreated");
     }
 }

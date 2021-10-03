@@ -18,6 +18,7 @@ public class UpdateProceedController implements Controller {
         String userRole = req.getParameter("userRole");
         String password = req.getParameter("psw");
         String oldEmail = req.getParameter("oldEmail");
+
         User user = new User();
         user.setFirstName(userName);
         user.setLastName(userLastName);
@@ -25,7 +26,9 @@ public class UpdateProceedController implements Controller {
         user.setUserRole(roles.valueOf(userRole));
         user.setEmail(oldEmail);
         userService.updateUser(user);
+
         req.setAttribute("user", user);
+
         return new ControllerResultDto("userUpdated");
     }
 }

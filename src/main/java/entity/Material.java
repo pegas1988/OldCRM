@@ -1,6 +1,11 @@
 package entity;
 
-public class Material {
+import java.io.Serializable;
+
+/**
+ * This class describe material that we can use at manufacture
+ */
+public class Material implements Serializable {
     private String materialName;
     private int quantity;
     private String colour;

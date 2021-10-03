@@ -1,5 +1,9 @@
 package entity;
 
+/**
+ * This class was created to get to know what type of user
+ * is logged in
+ */
 public class Button {
     private String buttonForNavbar;
 

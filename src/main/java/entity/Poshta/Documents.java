@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * This class:
+ * - annotated with jackson annotations to map json request/response
+ * - describe entity document
+ * - sub entity
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Documents {
 
@@ -25,18 +31,9 @@ public class Documents {
     public Documents() {
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-    public String getTtnCode() {
-        return ttnCode;
-    }
-
     public void setTtnCode(String ttnCode) {
         this.ttnCode = ttnCode;
     }

@@ -21,7 +21,7 @@ public class DeleteUserServlet extends HttpServlet {
         List<User> listOfUsers = userService.findAllUsers();
         req.setAttribute("list", listOfUsers);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp");
-        requestDispatcher.forward(req,resp);
+        requestDispatcher.forward(req, resp);
     }
 
     @Override
@@ -32,6 +32,5 @@ public class DeleteUserServlet extends HttpServlet {
         User user = new User(name, lastName);
         userService.deleteFromUser(user);
         resp.sendRedirect("userdelete");
-        //req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp").forward(req, resp);
     }
 }

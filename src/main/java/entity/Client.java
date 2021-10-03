@@ -2,6 +2,10 @@ package entity;
 
 import java.util.Date;
 
+/**
+ * This class describes Client entity
+ */
+
 public class Client {
 
     private Integer ClientID;

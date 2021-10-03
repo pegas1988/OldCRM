@@ -2,7 +2,9 @@ package service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.Poshta.*;
+import entity.Poshta.Documents;
+import entity.Poshta.MethodProperties;
+import entity.Poshta.PoshtaMainEntity;
 
 import java.util.ArrayList;
 import java.util.List;

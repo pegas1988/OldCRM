@@ -1,17 +1,19 @@
 package entity;
 
 import java.util.Date;
-import java.util.List;
 
+/**
+ * This class describe the order which customer could make
+ */
 public class Order {
     private Integer orderID;
     private Date dateCreating;
-    private List<Product> product;
+    private String product;
     private int totalPrice;
     private Date dateToBeDone;
     private String lifeCycle;
     private String stage;
-    private Client client;
+    private String client;
     private String comments;
     private String responsibleUser;
 
@@ -55,11 +57,11 @@ public class Order {
         this.dateCreating = dateCreating;
     }
 
-    public List<Product> getProduct() {
+    public String getProduct() {
         return product;
     }
 
-    public void setProduct(List<Product> product) {
+    public void setProduct(String product) {
         this.product = product;
     }
 
@@ -87,11 +89,11 @@ public class Order {
         this.stage = stage;
     }
 
-    public Client getClient() {
+    public String getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(String client) {
         this.client = client;
     }
 }
