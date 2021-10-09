@@ -1,5 +1,6 @@
 package dao;
 
+import dao.dao.constant.DaoConstant;
 import entity.Material;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
@@ -16,7 +17,7 @@ public class MaterialDao {
     private static final String GET_MATERIAL_ID_BY_NAME = "select material_id from material where material_name = ? and colour = ? and type  = ? and price = ?";
     private static final String UPDATE_MATERIAL = "update material set quantity = ?, colour = ?, type = ?, price = ?, material_name = ? where material_id = ?";
 
-    ConnectionPool connectionPool;
+    private ConnectionPool connectionPool;
 
     public void createNewMaterial(Material material) {
         connectionPool = ContextForConnectionPool.get();
@@ -48,7 +49,7 @@ public class MaterialDao {
     public int materialID(Material material) {
         connectionPool = ContextForConnectionPool.get();
         int materialID = 0;
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_MATERIAL_ID_BY_NAME)) {
             preparedStatement.setString(1, material.getMaterialName());
@@ -57,7 +58,7 @@ public class MaterialDao {
             preparedStatement.setInt(4, material.getPrice());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                materialID = resultSet.getInt("material_id");
+                materialID = resultSet.getInt(DaoConstant.DAO_MATERIAL_ID);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +84,7 @@ public class MaterialDao {
         connectionPool = ContextForConnectionPool.get();
         List<Material> materials = new ArrayList<>();
         try (Connection connection = connectionPool.get();
-             PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_TYPE);
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_TYPE)
         ) {
             preparedStatement.setString(1, type);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -97,12 +98,12 @@ public class MaterialDao {
     private void makeMaterial(List<Material> materials, ResultSet resultSet) throws SQLException {
         while (resultSet.next()) {
             Material material = new Material();
-            material.setColour(resultSet.getString("colour"));
-            material.setDensity(resultSet.getString("density"));
-            material.setPrice(resultSet.getInt("price"));
-            material.setMaterialName(resultSet.getString("material_name"));
-            material.setType(resultSet.getString("type"));
-            material.setQuantity(resultSet.getInt("quantity"));
+            material.setColour(resultSet.getString(DaoConstant.DAO_COLOUR));
+            material.setDensity(resultSet.getString(DaoConstant.DAO_DENSITY));
+            material.setPrice(resultSet.getInt(DaoConstant.DAO_PRICE));
+            material.setMaterialName(resultSet.getString(DaoConstant.DAO_MATERIAL_NAME));
+            material.setType(resultSet.getString(DaoConstant.DAO_TYPE));
+            material.setQuantity(resultSet.getInt(DaoConstant.DAO_QUANTITY));
             materials.add(material);
         }
     }

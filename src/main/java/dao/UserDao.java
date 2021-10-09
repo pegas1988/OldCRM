@@ -1,5 +1,6 @@
 package dao;
 
+import dao.dao.constant.DaoConstant;
 import entity.User;
 import entity.roles;
 import utility.ConnectionPool;
@@ -20,18 +21,13 @@ public class UserDao {
     private static final String FIND_USER_BY_ID = "select * from myuser where user_id =?";
     private static final String UPDATE_USER = "update myuser set first_name = ?, last_name = ?, password = ?, user_role = ? where email = ?";
 
-    ConnectionPool connectionPool;
+    private ConnectionPool connectionPool;
 
     public void create(User user) {
         connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO_USER, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setString(4, user.getUserRole().toString());
-            preparedStatement.setString(5, user.getEmail());
-            preparedStatement.execute();
+            userParsing(user, preparedStatement);
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 user.setUserID(generatedKeys.getInt(1));
@@ -39,6 +35,15 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void userParsing(User user, PreparedStatement preparedStatement) throws SQLException {
+        preparedStatement.setString(1, user.getFirstName());
+        preparedStatement.setString(2, user.getLastName());
+        preparedStatement.setString(3, user.getPassword());
+        preparedStatement.setString(4, user.getUserRole().toString());
+        preparedStatement.setString(5, user.getEmail());
+        preparedStatement.execute();
     }
 
     public void updateUserPassword(User user, String newPassword) {
@@ -124,11 +129,11 @@ public class UserDao {
             resultSet = preparedStatement.executeQuery();
             {
                 while (resultSet.next()) {
-                    userToFind.setFirstName(resultSet.getString("first_name"));
-                    userToFind.setLastName(resultSet.getString("last_name"));
-                    userToFind.setPassword(resultSet.getString("password"));
-                    userToFind.setUserID(resultSet.getInt("user_id"));
-                    userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
+                    userToFind.setFirstName(resultSet.getString(DaoConstant.DAO_FIRST_NAME));
+                    userToFind.setLastName(resultSet.getString(DaoConstant.DAO_LAST_NAME));
+                    userToFind.setPassword(resultSet.getString(DaoConstant.DAO_PASSWORD));
+                    userToFind.setUserID(resultSet.getInt(DaoConstant.DAO_USER_ID));
+                    userToFind.setUserRole(roles.valueOf(resultSet.getString(DaoConstant.DAO_USER_ROLE)));
                     userToFind.setEmail(userFind.getEmail());
                 }
             }
@@ -147,11 +152,11 @@ public class UserDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             {
                 while (resultSet.next()) {
-                    userToFind.setFirstName(resultSet.getString("first_name"));
-                    userToFind.setLastName(resultSet.getString("last_name"));
-                    userToFind.setPassword(resultSet.getString("password"));
-                    userToFind.setUserRole(roles.valueOf(resultSet.getString("user_role")));
-                    userToFind.setEmail(resultSet.getString("email"));
+                    userToFind.setFirstName(resultSet.getString(DaoConstant.DAO_FIRST_NAME));
+                    userToFind.setLastName(resultSet.getString(DaoConstant.DAO_LAST_NAME));
+                    userToFind.setPassword(resultSet.getString(DaoConstant.DAO_PASSWORD));
+                    userToFind.setUserRole(roles.valueOf(resultSet.getString(DaoConstant.DAO_USER_ROLE)));
+                    userToFind.setEmail(resultSet.getString(DaoConstant.DAO_EMAIL));
                 }
             }
         } catch (SQLException e) {
@@ -163,12 +168,7 @@ public class UserDao {
     public void updateUser(User user) {
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER)) {
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setString(4, user.getUserRole().toString());
-            preparedStatement.setString(5, user.getEmail());
-            preparedStatement.execute();
+            userParsing(user, preparedStatement);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,7 @@
 package controller;
 
+import annotation.CheckString;
+import controller.constant.ControllerConstant;
 import entity.User;
 import service.UserService;
 
@@ -11,8 +13,10 @@ public class DeleteUserController implements Controller {
 
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("lastName");
+        @CheckString
+        String firstName = req.getParameter(ControllerConstant.CONTROLLER_FIRST_NAME);
+        @CheckString
+        String lastName = req.getParameter(ControllerConstant.CONTROLLER_LAST_NAME);
 
         User user = new User(firstName, lastName);
         userService.deleteFromUser(user);

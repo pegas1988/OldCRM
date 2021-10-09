@@ -1,5 +1,7 @@
 package controller;
 
+import annotation.CheckString;
+import controller.constant.ControllerConstant;
 import entity.User;
 import service.UserService;
 
@@ -11,12 +13,13 @@ public class UpdateUserController implements Controller {
 
     @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
-        String email = req.getParameter("email");
+        @CheckString
+        String email = req.getParameter(ControllerConstant.CONTROLLER_EMAIL);
 
         User userFind = new User(email);
         User user = userService.findByEmail(userFind);
 
-        req.getSession().setAttribute("user", user);
+        req.getSession().setAttribute(ControllerConstant.CONTROLLER_USER, user);
 
         return new ControllerResultDto("updateProceed", true);
     }

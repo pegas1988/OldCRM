@@ -1,5 +1,6 @@
 package dao;
 
+import dao.dao.constant.DaoConstant;
 import entity.Order;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
@@ -17,13 +18,13 @@ public class OrderDao {
     private static final String DELETE = "update \"order\" set client_fio = ?";
     private static final String ORDER_PRODUCT = "insert into order_product (order_id, product_name) values (?,?)";
 
-    ConnectionPool connectionPool;
+    private ConnectionPool connectionPool;
 
     public void create(Order order, List<String> products) {
         connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_ORDER, Statement.RETURN_GENERATED_KEYS);
-             PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT);
+             PreparedStatement preparedStatementForProducts = connection.prepareStatement(ORDER_PRODUCT)
         ) {
             preparedStatement.setString(1, order.getClient());
             preparedStatement.setString(2, order.getComments());
@@ -33,11 +34,11 @@ public class OrderDao {
 
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
             while (generatedKeys.next()) {
-                order.setOrderID(generatedKeys.getInt("order_id"));
+                order.setOrderID(generatedKeys.getInt(DaoConstant.DAO_ORDER_ID));
             }
-            for (int i = 0; i < products.size(); i++) {
+            for (String product : products) {
                 preparedStatementForProducts.setInt(1, order.getOrderID());
-                preparedStatementForProducts.setString(2, products.get(i));
+                preparedStatementForProducts.setString(2, product);
                 preparedStatementForProducts.executeUpdate();
             }
         } catch (SQLException e) {
@@ -48,7 +49,7 @@ public class OrderDao {
     public void delete(Order order) {
         connectionPool = ContextForConnectionPool.get();
         try (Connection connection = connectionPool.get();
-             PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE)
         ) {
             preparedStatement.setString(1, order.getLifeCycle());
             preparedStatement.executeUpdate();
@@ -62,16 +63,16 @@ public class OrderDao {
         List<Order> orders = new ArrayList<>();
         try (Connection connection = connectionPool.get();
              Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(SELECT_ALL);
+             ResultSet resultSet = statement.executeQuery(SELECT_ALL)
         ) {
             while (resultSet.next()) {
                 Order order = new Order();
-                order.setOrderID(resultSet.getInt("order_id"));
-                order.setComments(resultSet.getString("comment"));
-                order.setStage(resultSet.getString("order_stage"));
-                order.setDateCreating(resultSet.getTimestamp("creating_date"));
-                order.setResponsibleUser(resultSet.getString("responsible_person"));
-                order.setClient(resultSet.getString("client_fio"));
+                order.setOrderID(resultSet.getInt(DaoConstant.DAO_ORDER_ID));
+                order.setComments(resultSet.getString(DaoConstant.DAO_COMMENT));
+                order.setStage(resultSet.getString(DaoConstant.DAO_ORDER_STAGE));
+                order.setDateCreating(resultSet.getTimestamp(DaoConstant.DAO_CREATING_DATE));
+                order.setResponsibleUser(resultSet.getString(DaoConstant.DAO_RESPONSIBLE_PERSON));
+                order.setClient(resultSet.getString(DaoConstant.DAO_CLIENTS_FIO));
                 orders.add(order);
             }
         } catch (SQLException e) {
@@ -89,17 +90,21 @@ public class OrderDao {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                order.setOrderID(resultSet.getInt("order_id"));
-                order.setLifeCycle(resultSet.getString("life_cycle"));
-                order.setComments(resultSet.getString("comment"));
-                order.setStage(resultSet.getString("order_stage"));
-                order.setDateCreating(resultSet.getTimestamp("creating_date"));
-                order.setResponsibleUser(resultSet.getString("responsible_person"));
+                orderParsing(order, resultSet);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return order;
+    }
+
+    private void orderParsing(Order order, ResultSet resultSet) throws SQLException {
+        order.setOrderID(resultSet.getInt(DaoConstant.DAO_ORDER_ID));
+        order.setLifeCycle(resultSet.getString(DaoConstant.DAO_LIFE_CYCLE));
+        order.setComments(resultSet.getString(DaoConstant.DAO_COMMENT));
+        order.setStage(resultSet.getString(DaoConstant.DAO_ORDER_STAGE));
+        order.setDateCreating(resultSet.getTimestamp(DaoConstant.DAO_CREATING_DATE));
+        order.setResponsibleUser(resultSet.getString(DaoConstant.DAO_RESPONSIBLE_PERSON));
     }
 
     public List<Order> findByProduct(String product) {
@@ -133,12 +138,7 @@ public class OrderDao {
         resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
             Order order = new Order();
-            order.setOrderID(resultSet.getInt("order_id"));
-            order.setLifeCycle(resultSet.getString("life_cycle"));
-            order.setComments(resultSet.getString("comment"));
-            order.setStage(resultSet.getString("order_stage"));
-            order.setDateCreating(resultSet.getTimestamp("creating_date"));
-            order.setResponsibleUser(resultSet.getString("responsible_person"));
+            orderParsing(order, resultSet);
             orders.add(order);
         }
     }

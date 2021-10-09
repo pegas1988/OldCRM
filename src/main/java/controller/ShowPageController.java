@@ -7,7 +7,7 @@ public class ShowPageController implements Controller {
 
     private final String VIEW_NAME;
 
-    public ShowPageController(String VIEW_NAME) {
+    ShowPageController(String VIEW_NAME) {
         this.VIEW_NAME = VIEW_NAME;
     }
 

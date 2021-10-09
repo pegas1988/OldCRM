@@ -1,5 +1,6 @@
 package dao;
 
+import dao.dao.constant.DaoConstant;
 import entity.Product;
 import utility.ConnectionPool;
 import utility.ContextForConnectionPool;
@@ -13,10 +14,9 @@ public class ProductDao {
     private static final String CREATE_PRODUCT = "insert into product (product_name) values (?)";
     private static final String DELETE_FROM_PRODUCT = "delete from product where product_name = ?";
     private static final String GET_PRODUCT_ID_BY_NAME = "select product_id from product where product_name = ?";
-    private static final String INSERT_INTO_PRODUCT_MATERIAL_PRODUCT_ID_MATERIAL_ID_VALUES = "insert into product_material (product_id, material_id) values (?, ?)";
     private static final String UPDATE_BY_NAME = "update product set product_name = ? where product_name = ?";
 
-    ConnectionPool connectionPool;
+    private ConnectionPool connectionPool;
 
     public List<Product> findAll() {
         connectionPool = ContextForConnectionPool.get();
@@ -27,10 +27,10 @@ public class ProductDao {
         ) {
             while (resultSet.next()) {
                 Product product = new Product();
-                product.setTimeToProduce(resultSet.getInt("production_time"));
-                product.setPriceOfAllMaterials(resultSet.getInt("material_price"));
-                product.setProductName(resultSet.getString("product_name"));
-                product.setId(resultSet.getInt("product_id"));
+                product.setTimeToProduce(resultSet.getInt(DaoConstant.DAO_PRODUCTION_TIME));
+                product.setPriceOfAllMaterials(resultSet.getInt(DaoConstant.DAO_MATERIAL_PRICE));
+                product.setProductName(resultSet.getString(DaoConstant.DAO_PRODUCT_NAME));
+                product.setId(resultSet.getInt(DaoConstant.DAO_PRODUCT_ID));
                 products.add(product);
             }
         } catch (SQLException e) {
@@ -48,7 +48,7 @@ public class ProductDao {
             preparedStatement.setString(1, product.getProductName());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                productID = resultSet.getInt("product_id");
+                productID = resultSet.getInt(DaoConstant.DAO_PRODUCT_ID);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,7 +93,6 @@ public class ProductDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Product actualProduct = new Product(productNewName);
-        return actualProduct;
+        return new Product(productNewName);
     }
 }

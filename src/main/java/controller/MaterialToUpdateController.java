@@ -1,32 +1,38 @@
 package controller;
 
+import annotation.CheckString;
+import controller.constant.ControllerConstant;
 import entity.Material;
 import service.MaterialService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public class MaterialToUpdateController implements Controller {
 
-    MaterialService materialService = new MaterialService();
+    private MaterialService materialService = new MaterialService();
 
     @Override
-    public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String name = req.getParameter("materialName");
-        String price = req.getParameter("price");
-        String colour = req.getParameter("colour");
-        String type = req.getParameter("type");
-        String quantity = req.getParameter("quantity");
+    public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
+        @CheckString
+        String name = req.getParameter(ControllerConstant.CONTROLLER_MATERIAL_NAME);
+        @CheckString
+        String price = materialParsing(req, ControllerConstant.CONTROLLER_PRICE);
+        @CheckString
+        String colour = req.getParameter(ControllerConstant.CONTROLLER_COLOUR);
+        @CheckString
+        String type = req.getParameter(ControllerConstant.CONTROLLER_TYPE);
+        @CheckString
+        String quantity = req.getParameter(ControllerConstant.CONTROLLER_QUANTITY);
 
         Material material = new Material();
         Material materialOld = new Material();
 
-        materialOld.setPrice(Integer.parseInt(req.getParameter("oldPrice")));
-        materialOld.setQuantity(Integer.parseInt(req.getParameter("oldQuantity")));
-        materialOld.setMaterialName(req.getParameter("oldName"));
-        materialOld.setColour(req.getParameter("oldColour"));
-        materialOld.setType(req.getParameter("oldType"));
+        materialOld.setPrice(Integer.parseInt(req.getParameter(ControllerConstant.CONTROLLER_OLD_PRICE)));
+        materialOld.setQuantity(Integer.parseInt(req.getParameter(ControllerConstant.CONTROLLER_OLD_QUANTITY)));
+        materialOld.setMaterialName(req.getParameter(ControllerConstant.CONTROLLER_OLD_NAME));
+        materialOld.setColour(req.getParameter(ControllerConstant.CONTROLLER_OLD_COLOUR));
+        materialOld.setType(req.getParameter(ControllerConstant.CONTROLLER_OLD_TYPE));
 
         material.setType(type);
         material.setColour(colour);
@@ -37,5 +43,9 @@ public class MaterialToUpdateController implements Controller {
         materialService.updateMaterial(material, materialService.getMaterialIDByName(materialOld));
 
         return new ControllerResultDto("materialUpdated");
+    }
+
+    private String materialParsing(HttpServletRequest req, String price) {
+        return req.getParameter(price);
     }
 }

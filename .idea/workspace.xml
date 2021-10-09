@@ -7,21 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e90ccad9-5321-4847-848a-e43dfc4852e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ShowListOfOrdersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resources/db/queries.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotation/AnnotationConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotation/CheckInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotation/CheckString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/constant/ControllerConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/dao/constant/DaoConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/ModelConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/CRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CRM_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClientCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClientCreateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClientCreateControllerWithList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClientCreateControllerWithList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CreateMaterialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateMaterialController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CreateNewProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CreateNewProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteMaterialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteMaterialController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DeleteUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DeleteUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ListOfClientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ListOfClientsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ListOfProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ListOfProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaterialCreatedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaterialCreatedController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MaterialToUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MaterialToUpdateController.java" afterDir="false" />
@@ -29,8 +33,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductSumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductSumController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowCreateClientControllerWithList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowCreateClientControllerWithList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowCreateOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowCreateOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowDeleteMaterialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowDeleteMaterialController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowDeleteProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowDeleteProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowListOfOrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowListOfOrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ShowSeeAllMaterialsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ShowSeeAllMaterialsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/UpdateMaterialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateMaterialController.java" afterDir="false" />
@@ -44,46 +51,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaterialDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaterialDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductMaterialDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProductMaterialDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProductMaterialDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/exception/DAOException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/exception/DAOException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/DailyReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/DailyReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Poshta/Documents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/Documents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Poshta/MethodProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/MethodProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaMainEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaMainEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponseFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Poshta/PoshtaResponseFinal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Stages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Stages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/WeatherAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MaterialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/PoshtaMainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PoshtaMainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/SerializationPoshta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SerializationPoshta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/WeatherMainClassAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/WeatherMainClassAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/AddUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DeleteUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ShowListOfUsersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ShowListOfUsersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/ContextForConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/ContextForConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/PostgresUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/PostgresUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clientCreated.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/clientCreated.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/createClient.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/createClient.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/createOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/createOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/listOfOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/listOfOrders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/listOfProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/listOfProducts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderWasCreated.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderWasCreated.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSum.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSum.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,9 +83,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -473,7 +443,9 @@
       <workItem from="1632514065814" duration="1259000" />
       <workItem from="1632593205721" duration="639000" />
       <workItem from="1633042942513" duration="408000" />
-      <workItem from="1633291914201" duration="2183000" />
+      <workItem from="1633291914201" duration="2331000" />
+      <workItem from="1633626450319" duration="15000" />
+      <workItem from="1633799679053" duration="10035000" />
     </task>
     <task id="LOCAL-00001" summary="WorkWithDB">
       <created>1622149434236</created>
@@ -519,49 +491,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/DeleteUserController.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/CreateMaterialController.java</url>
-          <line>14</line>
+          <line>17</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/MaterialDao.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/MaterialToUpdateController.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ListOfProductsController.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/UpdateProductController.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/DeleteProductController.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ClientCreateControllerWithList.java</url>
           <line>17</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/ShowListOfOrdersController.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

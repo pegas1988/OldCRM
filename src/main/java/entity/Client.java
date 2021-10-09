@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Client {
 
-    private Integer ClientID;
+    private Integer clientID;
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
@@ -112,10 +112,10 @@ public class Client {
     }
 
     public Integer getClientID() {
-        return ClientID;
+        return clientID;
     }
 
     public void setClientID(Integer clientID) {
-        ClientID = clientID;
+        this.clientID = clientID;
     }
 }
